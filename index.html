@@ -1,26 +1,2203 @@
 <!DOCTYPE html>
-<html>
-        <head>
-            <title>My Mine Gweh Website</title>
-            <link rel="stylesheet" type="text/css" href="style.css">
-        </head>
-        <body>
-            <img
-                id="banner-picture"
-                src="Banner.jpg"
-                alt="Banner Profile">
-            <br>
-            <img
-                id="profile-picture"
-                src="profile.png"
-                alt="Profile Picture" >
-            <h2 class="profile-name">  EralSadewa</h2>
-            <p>Mahasiswa Institut Teknologi Tangerang Selatan, dengan minat pada network engineering serta network defending</p>
-            <h3>Pengalaman</h3>
-            <ul>
-                <li>Roblox Game Developer</li>
-                <li>Network Technician</li>
-                <li>Computer Technician</li>
-            </ul>
-        </body>
+<html lang="en" class="dark" data-theme="dark" style="color-scheme: dark; scroll-behavior: smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eral Shabya Dewantara (Eralsadewa) — Network, AI &amp; Web Portfolio</title>
+<meta name="description" content="Portfolio of Eral Shabya Dewantara (Eralsadewa), an Information Technology undergraduate, Network Engineer, System Administrator, and Web/AI Builder based in South Tangerang.">
+<meta name="author" content="Eral Shabya Dewantara">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+fontFamily: {
+display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+body: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+mono: ['"JetBrains Mono"', 'monospace'],
+},
+colors: {
+bg: 'var(--bg)',
+surface: 'var(--surface)',
+'surface-elevated': 'var(--surface-elevated)',
+stroke: 'var(--stroke)',
+'text-primary': 'var(--text-primary)',
+'text-secondary': 'var(--text-secondary)',
+muted: 'var(--muted)',
+bronze: {
+100: '#f5ebe0',
+200: '#e6ccb2',
+300: '#ddb892',
+400: '#c89f74',
+500: '#b08968',
+600: '#9c6644',
+},
+steel: {
+100: '#e0f2fe',
+200: '#bae6fd',
+300: '#7dd3fc',
+400: '#38bdf8',
+500: '#0284c7',
+600: '#0369a1',
+}
+}
+}
+}
+};
+</script>
+
+<style>
+:root, html.dark {
+--bg: #070a0f;
+--surface: #0d121b;
+--surface-elevated: #141c29;
+--stroke: rgba(148, 163, 184, 0.15);
+--text-primary: #f1f5f9;
+--text-secondary: #cbd5e1;
+--muted: #8b9bb4;
+--card-bg: #0a0e16;
+--nav-bg: rgba(13, 18, 27, 0.88);
+}
+html.light {
+--bg: #f5f4f0;
+--surface: #ffffff;
+--surface-elevated: #edece6;
+--stroke: rgba(15, 23, 42, 0.12);
+--text-primary: #0f172a;
+--text-secondary: #334155;
+--muted: #64748b;
+--card-bg: #ffffff;
+--nav-bg: rgba(255, 255, 255, 0.88);
+}
+body {
+background-color: var(--bg);
+color: var(--text-primary);
+font-family: 'Inter', system-ui, -apple-system, sans-serif;
+overflow-x: hidden;
+transition: background-color 0.35s ease, color 0.35s ease;
+}
+.accent-gradient {
+background: linear-gradient(135deg, #c89f74 0%, #64748b 50%, #38bdf8 100%);
+}
+.accent-text-gradient {
+background: linear-gradient(135deg, #e6ccb2 0%, #c89f74 45%, #7dd3fc 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+html.light .accent-text-gradient {
+background: linear-gradient(135deg, #8a5a36 0%, #475569 50%, #0369a1 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+@keyframes scrollDown {
+0% { transform: translateY(-100%); opacity: 0; }
+50% { opacity: 1; }
+100% { transform: translateY(200%); opacity: 0; }
+}
+.animate-scroll-down {
+animation: scrollDown 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes lanyardSwing {
+0%, 100% { transform: translateY(2px) rotate(1.1deg); }
+50% { transform: translateY(-2px) rotate(-1.1deg); }
+}
+.lanyard-swing {
+animation: lanyardSwing 6s ease-in-out infinite;
+transform-origin: top center;
+}
+@keyframes marqueeScroll {
+0% { transform: translate3d(0%, 0, 0); }
+100% { transform: translate3d(-50%, 0, 0); }
+}
+.animate-marquee {
+display: flex;
+width: max-content;
+animation: marqueeScroll 32s linear infinite;
+}
+.animate-marquee:hover {
+animation-play-state: paused;
+}
+.role-transition {
+transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.dot-grid-overlay {
+background-image: radial-gradient(circle, rgba(200, 159, 116, 0.45) 0.75px, transparent 0.75px);
+background-size: 6px 6px;
+}
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+width: 8px;
+height: 8px;
+}
+::-webkit-scrollbar-track {
+background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+background: rgba(148, 163, 184, 0.25);
+border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: rgba(200, 159, 116, 0.5);
+}
+</style>
+</head>
+<body class="selection:bg-bronze-400/30 selection:text-bronze-100">
+<svg class="hidden" aria-hidden="true"><defs><symbol id="sym-graphic-1" viewBox="0 0 640 360"><defs><linearGradient id="bg-ollama" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#090d16"/><stop offset="100%" stop-color="#131c2e"/></linearGradient></defs><rect width="640" height="360" fill="url(#bg-ollama)"/><rect x="44" y="36" width="552" height="288" rx="16" fill="#0f172a" stroke="rgba(56,189,248,0.32)" stroke-width="1.5"/><circle cx="68" cy="58" r="5" fill="#f43f5e"/><circle cx="84" cy="58" r="5" fill="#f59e0b"/><circle cx="100" cy="58" r="5" fill="#10b981"/><text x="122" y="62" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="11">ollama-web-launcher — localhost:11434</text><line x1="44" y1="78" x2="596" y2="78" stroke="rgba(148,163,184,0.16)"/><rect x="64" y="96" width="148" height="206" rx="10" fill="#090d16" stroke="rgba(200,159,116,0.22)"/><text x="80" y="120" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">LOCAL MODELS</text><rect x="76" y="132" width="124" height="28" rx="6" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="1"/><text x="88" y="150" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="10">llama3.2:8b-q4</text><rect x="76" y="168" width="124" height="28" rx="6" fill="#111827"/><text x="88" y="186" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10">qwen2.5-coder:7b</text><rect x="76" y="204" width="124" height="28" rx="6" fill="#111827"/><text x="88" y="222" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="10">deepseek-r1:8b</text><rect x="228" y="96" width="348" height="154" rx="10" fill="#090d16" stroke="rgba(148,163,184,0.15)"/><text x="246" y="124" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11">&gt; Prompt: Analyze MikroTik PCC firewall mangle</text><text x="246" y="150" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">✓ Evaluasi 2 jalur WAN dengan per-connection-classifier</text><text x="246" y="172" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">✓ Zero-cloud telemetry • 42.8 tokens/sec local GPU</text><rect x="246" y="194" width="210" height="36" rx="8" fill="rgba(200,159,116,0.12)" stroke="rgba(200,159,116,0.35)"/><text x="260" y="216" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="10">STATUS: STREAMING RESPONSE ●</text><rect x="228" y="262" width="348" height="40" rx="10" fill="#111827" stroke="rgba(56,189,248,0.3)"/><text x="246" y="286" fill="#64748b" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Ask local LLM or switch system prompt preset...</text></symbol><symbol id="sym-graphic-2" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><circle cx="320" cy="180" r="150" fill="rgba(200,159,116,0.08)"/><rect x="140" y="34" width="164" height="292" rx="22" fill="#0f172a" stroke="#c89f74" stroke-width="2"/><rect x="154" y="60" width="136" height="42" rx="8" fill="rgba(200,159,116,0.15)"/><text x="166" y="80" fill="#e2c097" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">LabLink ITTS</text><text x="166" y="94" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="8.5">Borrow Lab Equipment</text><rect x="154" y="114" width="136" height="52" rx="8" fill="#1e293b"/><text x="166" y="135" fill="#f1f5f9" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="600">MikroTik RB951Ui-2HnD</text><text x="166" y="152" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="8.5">● 12 Units Available</text><rect x="154" y="176" width="136" height="52" rx="8" fill="#1e293b"/><text x="166" y="197" fill="#f1f5f9" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="600">Cisco Catalyst 2960</text><text x="166" y="214" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="8.5">● 4 Units in Lab B</text><rect x="154" y="244" width="136" height="32" rx="8" fill="#c89f74"/><text x="186" y="264" fill="#090d16" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">Scan QR to Borrow</text><rect x="336" y="48" width="164" height="278" rx="22" fill="#0f172a" stroke="rgba(56,189,248,0.45)" stroke-width="1.8"/><text x="354" y="82" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">ACTIVE LOAN TICKET</text><rect x="354" y="96" width="128" height="90" rx="10" fill="#090d16" stroke="rgba(56,189,248,0.25)"/><text x="368" y="122" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="9">ID: #ITTS-LAB-084</text><text x="368" y="142" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="9">Due: 16:30 WIB Today</text><text x="368" y="164" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="9">Status: Verified ✓</text><rect x="354" y="200" width="128" height="64" rx="10" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.35)"/><text x="368" y="226" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="600">Zero Queue Friction</text><text x="368" y="244" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="8.5">Auto-notify lab assistant</text></symbol><symbol id="sym-graphic-3" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><rect x="36" y="32" width="568" height="296" rx="16" fill="#0f172a" stroke="rgba(200,159,116,0.35)" stroke-width="1.5"/><text x="60" y="66" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">BPBD BANTEN • EARLY WARNING TELEMETRY NODE</text><circle cx="566" cy="62" r="6" fill="#34d399"/><rect x="60" y="84" width="330" height="150" rx="10" fill="#090d16" stroke="rgba(56,189,248,0.22)"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.5" points="76,195 115,180 155,186 195,140 235,155 275,110 315,128 355,98 375,105"/><polyline fill="none" stroke="#c89f74" stroke-width="2" stroke-dasharray="4 4" points="76,210 155,205 235,190 315,175 375,168"/><text x="76" y="110" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9.5">Water Level Sensor (Ultrasonic + LoRa)</text><rect x="408" y="84" width="172" height="70" rx="10" fill="#090d16" stroke="rgba(200,159,116,0.3)"/><text x="424" y="108" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">SIAGA STATUS</text><text x="424" y="134" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700">NORMAL (142cm)</text><rect x="408" y="164" width="172" height="70" rx="10" fill="#090d16" stroke="rgba(56,189,248,0.3)"/><text x="424" y="188" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">PACKET UPLINK</text><text x="424" y="214" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="15" font-weight="700">99.4% MQTT QoS1</text><rect x="60" y="250" width="520" height="54" rx="10" fill="rgba(200,159,116,0.08)" stroke="rgba(200,159,116,0.25)"/><text x="80" y="281" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="10.5">Nodes: Serang • Pandeglang • Lebak • Tangerang Selatan  |  Latency: 48ms</text></symbol><symbol id="sym-graphic-4" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><g stroke="rgba(148,163,184,0.08)" stroke-width="1"><line x1="0" y1="90" x2="640" y2="90"/><line x1="0" y1="180" x2="640" y2="180"/><line x1="0" y1="270" x2="640" y2="270"/><line x1="160" y1="0" x2="160" y2="360"/><line x1="320" y1="0" x2="320" y2="360"/><line x1="480" y1="0" x2="480" y2="360"/></g><rect x="48" y="66" width="136" height="76" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8"/><text x="68" y="96" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">WAN 1 (ISP A)</text><text x="68" y="118" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9.5">ether1 • 100 Mbps</text><rect x="48" y="218" width="136" height="76" rx="12" fill="#0f172a" stroke="#c89f74" stroke-width="1.8"/><text x="68" y="248" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">WAN 2 (ISP B)</text><text x="68" y="270" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9.5">ether2 • 100 Mbps</text><path d="M184 104 L248 156" stroke="#38bdf8" stroke-width="2.5"/><path d="M184 256 L248 204" stroke="#c89f74" stroke-width="2.5"/><rect x="248" y="118" width="156" height="124" rx="16" fill="#111a2e" stroke="#e2c097" stroke-width="2"/><text x="270" y="150" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">MikroTik RouterOS</text><text x="270" y="172" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="10">PCC: both-addresses</text><text x="270" y="192" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="9.5">check-gateway=ping</text><text x="270" y="214" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">Failover &lt; 1.2s</text><path d="M404 180 L464 180" stroke="#34d399" stroke-width="2.5"/><rect x="464" y="110" width="132" height="140" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.8"/><text x="482" y="142" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">LAN / VLAN Pool</text><text x="482" y="166" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">• Lab Switch (VLAN 10)</text><text x="482" y="188" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">• Corp Wi-Fi (VLAN 20)</text><text x="482" y="210" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">• VoIP Queue (QoS)</text></symbol><symbol id="sym-graphic-5" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><rect x="44" y="34" width="552" height="292" rx="16" fill="#0f172a" stroke="rgba(200,159,116,0.38)" stroke-width="1.5"/><text x="68" y="68" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">OPENWRT VIRTUAL LAB • GNS3 &amp; VIRTUALBOX TOPOLOGY</text><rect x="68" y="88" width="240" height="210" rx="12" fill="#090d16" stroke="rgba(56,189,248,0.28)"/><text x="86" y="116" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="10.5">root@OpenWrt:~# cat /etc/config/network</text><text x="86" y="140" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9.5">config interface 'lan'</text><text x="86" y="158" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">  option device 'br-lan.10'</text><text x="86" y="176" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">  option proto 'static'</text><text x="86" y="194" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9.5">  option ipaddr '192.168.10.1'</text><text x="86" y="220" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="9.5">✓ fw4 nftables zone isolation active</text><text x="86" y="242" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="9.5">✓ Published Guidebook (InTech Press)</text><rect x="330" y="88" width="242" height="62" rx="10" fill="#111a2e" stroke="#c89f74"/><text x="348" y="116" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">OpenWrt 23.05 x86_64 VM</text><text x="348" y="134" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="9">4x VirtIO NIC • LuCI HTTPS</text><rect x="330" y="162" width="242" height="62" rx="10" fill="#111a2e" stroke="#38bdf8"/><text x="348" y="190" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">GNS3 Virtual Switch Trunk</text><text x="348" y="208" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">802.1Q VLAN 10 / 20 / 99 Management</text><rect x="330" y="236" width="242" height="62" rx="10" fill="#111a2e" stroke="#34d399"/><text x="348" y="264" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Alpine Linux Test Clients</text><text x="348" y="282" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="9">iperf3 &amp; traceroute validation</text></symbol><symbol id="sym-graphic-6" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><rect x="38" y="30" width="564" height="300" rx="16" fill="#0f172a" stroke="rgba(56,189,248,0.35)" stroke-width="1.5"/><text x="62" y="64" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">WAZUH SIEM + AI SOC • MITRE ATT&amp;CK TELEMETRY</text><rect x="62" y="84" width="160" height="84" rx="10" fill="#090d16" stroke="rgba(244,63,94,0.4)"/><text x="78" y="110" fill="#fb7185" font-family="JetBrains Mono, monospace" font-size="9.5">BRUTE-FORCE BLOCKED</text><text x="78" y="142" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">Rule 5712</text><rect x="240" y="84" width="160" height="84" rx="10" fill="#090d16" stroke="rgba(200,159,116,0.4)"/><text x="256" y="110" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="9.5">FIM INTEGRITY SCAN</text><text x="256" y="142" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">/etc/passwd</text><rect x="418" y="84" width="160" height="84" rx="10" fill="#090d16" stroke="rgba(52,211,153,0.4)"/><text x="434" y="110" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="9.5">AI TRIAGE LATENCY</text><text x="434" y="142" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">1.4 sec</text><rect x="62" y="184" width="516" height="122" rx="10" fill="#090d16" stroke="rgba(148,163,184,0.2)"/><text x="82" y="212" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="10">[ALERT] T1110.001 SSH Credential Stuffing detected on Agent ubuntu-prod-02</text><text x="82" y="238" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="10">[AI-SOC] Correlated 14 failed auth events → Active Response firewall-drop triggered</text><text x="82" y="264" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="10">[STATUS] Host isolated &amp; incident Playbook #SOC-19 dispatched to SysAdmin</text></symbol><symbol id="sym-graphic-7" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><rect x="42" y="34" width="556" height="292" rx="16" fill="#0f172a" stroke="rgba(200,159,116,0.35)" stroke-width="1.5"/><text x="66" y="68" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">BROWSER SECURITY • SAME-ORIGIN POLICY (SOP) &amp; CORS LAB</text><rect x="66" y="96" width="196" height="196" rx="12" fill="#090d16" stroke="#34d399" stroke-width="1.8"/><text x="84" y="126" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">TRUSTED ORIGIN</text><text x="84" y="148" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="9.5">https://portal.itts.ac.id:443</text><text x="84" y="178" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• SameSite=Strict Cookie</text><text x="84" y="198" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Anti-CSRF Token Verified</text><text x="84" y="218" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• DOM Read/Write Allowed</text><rect x="288" y="116" width="64" height="156" rx="10" fill="rgba(200,159,116,0.14)" stroke="#c89f74" stroke-width="1.5"/><text x="303" y="188" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">SOP</text><text x="296" y="208" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="8.5">BLOCK</text><rect x="378" y="96" width="196" height="196" rx="12" fill="#090d16" stroke="#f43f5e" stroke-width="1.8"/><text x="396" y="126" fill="#fb7185" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">CROSS-ORIGIN REQUEST</text><text x="396" y="148" fill="#f1f5f9" font-family="JetBrains Mono, monospace" font-size="9.5">https://attacker-sandbox.test</text><text x="396" y="178" fill="#fb7185" font-family="JetBrains Mono, monospace" font-size="9">✕ Cross-Origin DOM Read</text><text x="396" y="198" fill="#fb7185" font-family="JetBrains Mono, monospace" font-size="9">✕ Wildcard Credential Leak</text><text x="396" y="218" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">✓ Preflight OPTIONS Enforced</text></symbol><symbol id="sym-graphic-8" viewBox="0 0 640 360"><rect width="640" height="360" fill="#090d16"/><rect x="42" y="34" width="556" height="292" rx="16" fill="#0f172a" stroke="rgba(56,189,248,0.35)" stroke-width="1.5"/><text x="66" y="68" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">CLOUDFLARE EDGE • GITHUB CI/CD &amp; DIGITAL VENTURES</text><rect x="66" y="96" width="154" height="190" rx="12" fill="#090d16" stroke="rgba(200,159,116,0.35)"/><text x="84" y="126" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">1. GIT PUSH &amp; CI</text><text x="84" y="152" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9">@Eralsadewa</text><text x="84" y="174" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Static Lint &amp; Build</text><text x="84" y="194" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Secret Scan Pass</text><rect x="243" y="96" width="154" height="190" rx="12" fill="#090d16" stroke="rgba(56,189,248,0.35)"/><text x="261" y="126" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2. EDGE NETWORK</text><text x="261" y="152" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9">Cloudflare DNS + SSL</text><text x="261" y="174" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Strict TLS 1.3</text><text x="261" y="194" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• DDoS &amp; WAF Rules</text><rect x="420" y="96" width="154" height="190" rx="12" fill="#090d16" stroke="rgba(52,211,153,0.35)"/><text x="438" y="126" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">3. LIVE VENTURES</text><text x="438" y="152" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="9">Fast Track Komputer</text><text x="438" y="174" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Hardware Diagnostics</text><text x="438" y="194" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="9">• Client Web Portals</text></symbol></defs></svg>
+<div class="homepage-shell min-h-screen bg-bg font-body text-text-primary">
+<nav class="fixed left-0 right-0 top-0 z-50 flex justify-center px-3 pt-4 md:px-4 md:pt-6" aria-label="Primary Navigation">
+<div class="inline-flex max-w-full items-center overflow-x-auto rounded-full border border-stroke p-2 backdrop-blur-xl transition-all duration-300 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style="background-color: var(--nav-bg); box-shadow: rgba(0, 0, 0, 0.45) 0px 14px 42px;">
+<a href="#home" aria-label="Back to home" class="group relative h-9 w-9 shrink-0 rounded-full p-[1.5px] transition-transform duration-300 hover:scale-105">
+<span class="absolute inset-0 rounded-full accent-gradient"></span>
+<span class="relative flex h-full w-full items-center justify-center rounded-full bg-bg">
+<span class="font-display text-[13px] font-semibold italic tracking-wider text-text-primary">ESD</span>
+</span>
+</a>
+<span class="ml-3 mr-4 hidden h-6 w-px shrink-0 bg-stroke sm:block"></span>
+<div class="flex shrink-0 items-center gap-0.5" id="nav-links-container">
+<a href="#home" data-nav="home" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm bg-surface-elevated text-text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" data-i18n="nav_home">Home</a>
+<a href="#about" data-nav="about" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_about">About</a>
+<a href="#education" data-nav="education" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_education">Education</a>
+<a href="#experience" data-nav="experience" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_experience">Experience</a>
+<a href="#work" data-nav="work" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_projects">Projects</a>
+<a href="#certificate" data-nav="certificate" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_certificate">Certificate</a>
+<a href="#journal" data-nav="journal" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_publisher">Publisher</a>
+<a href="#contact" data-nav="contact" class="nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary" data-i18n="nav_contact">Contact</a>
+</div>
+<span class="ml-3 mr-3 hidden h-5 w-px shrink-0 bg-stroke sm:block"></span>
+<div class="flex shrink-0 items-center gap-2">
+<div class="inline-flex items-center rounded-full border border-stroke bg-surface-elevated p-1" role="group" aria-label="Language selector">
+<button type="button" id="lang-en-btn" aria-pressed="true" class="rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition bg-text-primary text-bg">en</button>
+<button type="button" id="lang-id-btn" aria-pressed="false" class="rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition text-muted hover:text-text-primary">id</button>
+</div>
+<button type="button" id="theme-toggle-btn" aria-label="Switch theme mode" title="Switch theme mode" class="group relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-stroke bg-surface-elevated text-text-primary shadow-[0_8px_24px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl transition-all duration-300 hover:border-bronze-400/50">
+<span aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-full bg-bronze-400/0 blur-xl transition-colors duration-300 group-hover:bg-bronze-400/20"></span>
+<span class="relative z-10 flex items-center justify-center" id="theme-icon-wrap">
+<svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-bronze-300"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+<svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden text-slate-700"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+</span>
+</button>
+<button type="button" id="open-cv-modal-btn" class="group relative shrink-0 rounded-full text-xs sm:text-sm">
+<span class="absolute -inset-[1.5px] rounded-full accent-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+<span class="relative inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-text-primary backdrop-blur-md transition-colors duration-300 sm:px-4 sm:py-2">
+<span data-i18n="nav_cv">Download CV</span>
+<span aria-hidden="true" class="text-bronze-300">↓</span>
+</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<section id="home" class="relative min-h-screen w-full overflow-hidden bg-[#06090e]">
+<div class="absolute inset-0 overflow-hidden">
+<canvas id="hero-wave-canvas" class="absolute inset-0 h-full w-full object-cover opacity-90"></canvas>
+<div class="absolute inset-0 bg-gradient-to-b from-[#06090e]/50 via-[#06090e]/25 to-[#06090e]"></div>
+<div class="pointer-events-none absolute left-1/4 top-1/4 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/10 blur-[130px]"></div>
+<div class="pointer-events-none absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-bronze-400/15 blur-[140px]"></div>
+<div class="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-bg to-transparent"></div>
+</div>
+<div class="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
+<div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 backdrop-blur-md">
+<span class="h-1.5 w-1.5 rounded-full bg-bronze-300 shadow-[0_0_10px_rgba(221,184,146,0.9)]"></span>
+<p class="font-mono text-[11px] uppercase tracking-[0.28em] text-slate-200" data-i18n="hero_badge">portfolio ’26 • @eralsadewa</p>
+</div>
+<h1 class="mb-6 font-display text-5xl italic leading-[0.92] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[6.5rem]">
+Eral Shabya Dewantara
+</h1>
+<p class="mb-4 text-lg text-slate-200/90 md:text-2xl">
+<span data-i18n="hero_role_prefix">A calm, detail-driven</span>
+<span id="cycling-role-text" class="role-transition inline-block font-display text-2xl italic text-bronze-200 md:text-3xl px-1">Network Engineer</span>
+<span data-i18n="hero_role_suffix">architecting dependable digital infrastructure &amp; interfaces.</span>
+</p>
+<p class="mb-11 max-w-xl text-sm leading-relaxed text-slate-300/85 md:text-base" data-i18n="hero_desc">
+I combine network engineering, Linux system administration, cybersecurity, and human-centered web development to build systems that work quietly, securely, and reliably.
+</p>
+<div class="inline-flex flex-wrap justify-center gap-4">
+<a href="#work" class="group relative rounded-full px-7 py-3.5 text-sm transition-transform duration-300 hover:scale-105">
+<span class="pointer-events-none absolute inset-0 rounded-full bg-slate-100 opacity-100 transition-opacity duration-300 group-hover:opacity-0"></span>
+<span class="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-bronze-500 via-bronze-400 to-sky-500 opacity-0 shadow-[0_0_20px_rgba(200,159,116,0.65)] transition-all duration-300 group-hover:opacity-100 group-hover:shadow-[0_0_30px_rgba(200,159,116,0.85)]"></span>
+<span class="relative z-10 font-medium text-slate-950 transition-colors duration-200 group-hover:text-white" data-i18n="hero_cta_works">Explore Works</span>
+</a>
+<a href="#contact" class="group relative rounded-full px-7 py-3.5 text-sm transition duration-300 hover:scale-105">
+<span class="absolute inset-0 rounded-full border border-bronze-300/60 bg-bronze-400/10 shadow-[0_0_14px_rgba(200,159,116,0.35),inset_0_0_12px_rgba(200,159,116,0.18)] transition-all duration-300 group-hover:border-bronze-200 group-hover:bg-bronze-400/20 group-hover:shadow-[0_0_24px_rgba(200,159,116,0.65)]"></span>
+<span class="absolute inset-[1.5px] rounded-full bg-slate-950/75 backdrop-blur-md"></span>
+<span class="relative z-10 text-bronze-100 transition-colors duration-300 group-hover:text-white" data-i18n="hero_cta_contact">Reach Out Gently</span>
+</a>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
+<span class="text-[11px] uppercase tracking-[0.22em] text-slate-300/60" data-i18n="scroll_label">Scroll</span>
+<div class="relative h-10 w-px overflow-hidden bg-slate-300/20">
+<span class="accent-gradient absolute inset-0 h-1/2 w-full animate-scroll-down"></span>
+</div>
+</div>
+</section>
+<section id="about" class="relative overflow-hidden bg-bg pb-12 pt-20 md:pb-16 md:pt-28">
+<div aria-hidden="true" class="pointer-events-none absolute right-[-12rem] top-[15%] h-[32rem] w-[32rem] rounded-full bg-sky-500/10 blur-[140px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute left-[-12rem] bottom-[10%] h-[28rem] w-[28rem] rounded-full bg-bronze-400/10 blur-[140px]"></div>
+<div class="relative z-10 mx-auto flex max-w-[1200px] items-center px-6 md:px-10 lg:px-16">
+<div class="w-full py-12 md:py-20">
+<div class="mb-10 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="whitespace-nowrap text-xs uppercase tracking-[0.3em] text-muted" data-i18n="about_label">About Me</span>
+<div class="h-px flex-1 overflow-hidden bg-stroke">
+<div class="h-full w-full bg-gradient-to-r from-bronze-400 via-sky-400/60 to-transparent"></div>
+</div>
+</div>
+<div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+<div>
+<h2 class="text-5xl leading-[0.95] tracking-[-0.035em] text-text-primary sm:text-6xl md:text-7xl lg:text-[5rem]" data-i18n="about_heading_html">
+Engineering with <span class="font-display italic text-bronze-300">precision,</span><br>leading with <span class="font-display italic text-sky-300">calmness.</span>
+</h2>
+<blockquote class="mt-8 rounded-2xl border border-stroke bg-surface p-5 shadow-[0_14px_34px_rgba(0,0,0,0.25)]">
+<p class="font-display text-lg italic leading-relaxed text-text-primary md:text-xl" data-i18n="about_motto_quote">
+“We don’t need to be extraordinary to begin; we simply need to genuinely enjoy the craft of what we are building.”
+</p>
+<footer class="mt-2 flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted">
+<span class="h-1.5 w-1.5 rounded-full bg-bronze-400"></span>
+<span data-i18n="about_motto_caption">Personal Philosophy • Eral Shabya Dewantara</span>
+</footer>
+</blockquote>
+</div>
+<div class="grid items-center gap-10 sm:grid-cols-[260px_1fr] lg:gap-12">
+<div class="relative flex min-h-[480px] items-start justify-center pt-28">
+<div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-0 h-36 w-36 -translate-x-1/2">
+<span class="absolute left-[34px] top-0 h-36 w-[3px] origin-top -rotate-[11deg] rounded-full bg-gradient-to-b from-bronze-200 via-bronze-500 to-sky-600 shadow-[0_0_14px_rgba(200,159,116,0.55)]"></span>
+<span class="absolute right-[34px] top-0 h-36 w-[3px] origin-top rotate-[11deg] rounded-full bg-gradient-to-b from-bronze-200 via-bronze-500 to-sky-600 shadow-[0_0_14px_rgba(200,159,116,0.55)]"></span>
+</div>
+<div class="relative lanyard-swing">
+<div class="relative z-10 mx-auto -mb-1 flex h-9 w-14 items-center justify-center rounded-t-xl border border-bronze-300/35 bg-surface-elevated shadow-[0_0_18px_rgba(200,159,116,0.3)]">
+<span class="h-2 w-6 rounded-full bg-bronze-400/60"></span>
+</div>
+<div class="relative w-[250px] overflow-hidden rounded-[2rem] bg-gradient-to-br from-bronze-300 via-slate-500 to-sky-600 p-[1.5px] shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_35px_rgba(200,159,116,0.22)]">
+<div class="overflow-hidden rounded-[calc(2rem-1.5px)] bg-[#0b0f17]">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img id="lanyard-custom-photo" src="https://avatars.githubusercontent.com/u/9919?s=400&v=4" alt="Eral Shabya Dewantara" class="hidden h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+<svg id="lanyard-vector-avatar" viewBox="0 0 400 500" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Eral Shabya Dewantara — IT & Network Engineer Portrait"><defs><linearGradient id="bg-port" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b111e"/><stop offset="55%" stop-color="#111a2e"/><stop offset="100%" stop-color="#1c1817"/></linearGradient><linearGradient id="suit-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e293b"/><stop offset="100%" stop-color="#0f172a"/></linearGradient><linearGradient id="bronze-rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e2c097"/><stop offset="50%" stop-color="#c89f74"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient><radialGradient id="glow-amber" cx="0.75" cy="0.22" r="0.55"><stop offset="0%" stop-color="rgba(200,159,116,0.28)"/><stop offset="100%" stop-color="rgba(200,159,116,0)"/></radialGradient></defs><rect width="400" height="500" fill="url(#bg-port)"/><rect width="400" height="500" fill="url(#glow-amber)"/><g stroke="rgba(148,163,184,0.08)" stroke-width="1"><line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="160" x2="400" y2="160"/><line x1="0" y1="240" x2="400" y2="240"/><line x1="0" y1="320" x2="400" y2="320"/><line x1="80" y1="0" x2="80" y2="500"/><line x1="160" y1="0" x2="160" y2="500"/><line x1="240" y1="0" x2="240" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/></g><circle cx="200" cy="195" r="118" fill="none" stroke="url(#bronze-rim)" stroke-width="1" stroke-dasharray="5 7" opacity="0.45"/><circle cx="200" cy="195" r="92" fill="rgba(56,189,248,0.05)" stroke="rgba(200,159,116,0.22)" stroke-width="1"/><path d="M55 500 C55 370 115 330 200 330 C285 330 345 370 345 500 Z" fill="url(#suit-grad)" stroke="rgba(200,159,116,0.35)" stroke-width="1.5"/><path d="M162 332 L200 420 L238 332 Z" fill="#0f172a" stroke="rgba(56,189,248,0.35)" stroke-width="1.2"/><path d="M145 335 L188 435 L162 445 L125 360 Z" fill="#1e293b" stroke="rgba(200,159,116,0.3)" stroke-width="1"/><path d="M255 335 L212 435 L238 445 L275 360 Z" fill="#1e293b" stroke="rgba(200,159,116,0.3)" stroke-width="1"/><rect x="178" y="275" width="44" height="62" rx="14" fill="#c69c72"/><path d="M178 305 Q200 322 222 305 L222 335 L178 335 Z" fill="#a87e56" opacity="0.45"/><path d="M144 185 C144 132 168 108 200 108 C232 108 256 132 256 185 C256 242 232 286 200 286 C168 286 144 242 144 185 Z" fill="#d4ab82"/><path d="M142 182 C140 132 165 98 202 98 C240 98 262 126 258 178 C252 152 238 136 212 134 C180 132 156 148 142 182 Z" fill="#18202c"/><rect x="158" y="182" width="34" height="22" rx="5" fill="rgba(56,189,248,0.08)" stroke="#e2c097" stroke-width="2"/><rect x="208" y="182" width="34" height="22" rx="5" fill="rgba(56,189,248,0.08)" stroke="#e2c097" stroke-width="2"/><line x1="192" y1="191" x2="208" y2="191" stroke="#e2c097" stroke-width="2"/><path d="M186 246 Q200 255 214 246" fill="none" stroke="#8c6239" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(20, 20)"><rect width="128" height="24" rx="12" fill="rgba(9,13,22,0.78)" stroke="rgba(200,159,116,0.4)" stroke-width="1"/><circle cx="14" cy="12" r="3.5" fill="#34d399"/><text x="24" y="15.5" fill="#e2c097" font-family="JetBrains Mono, monospace" font-size="9.5" letter-spacing="1">ID: ESD-2026</text></g><circle cx="248" cy="378" r="5" fill="#c89f74" stroke="#090d16" stroke-width="1.5"/></svg>
+<label for="lanyard-photo-input" class="absolute right-3 top-3 z-20 cursor-pointer rounded-full border border-bronze-400/45 bg-bg/85 px-2.5 py-1 font-mono text-[10px] text-bronze-300 backdrop-blur-md transition hover:border-bronze-300 hover:bg-bronze-400/20" title="Upload foto profil Anda dari perangkat">
+📷 Change Photo
+<input id="lanyard-photo-input" type="file" accept="image/*" class="hidden" />
+</label>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0b0f17] via-transparent to-sky-500/10"></div>
+<span class="absolute left-4 top-4 rounded-full border border-white/20 bg-black/45 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/90 backdrop-blur-md">ERALSADEWA</span>
+</div>
+<div class="relative p-5 text-white">
+<div aria-hidden="true" class="absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-bronze-400/20 blur-2xl"></div>
+<div class="relative">
+<p class="font-display text-2xl italic text-white">Eral Shabya D.</p>
+<p class="mt-1 text-[11px] uppercase tracking-[0.14em] text-bronze-200/85">Network · Security · Web</p>
+<div class="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+<span class="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">ITTS · Tangsel</span>
+<span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,1)]"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-md">
+<span class="inline-flex rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3.5 py-1.5 text-xs uppercase tracking-[0.18em] text-bronze-300" data-i18n="about_pill">A little about me</span>
+<p class="mt-6 text-xl leading-relaxed text-text-primary md:text-2xl" data-i18n="about_intro">
+I’m Eral—also known as Eralsadewa—an Information Technology student at Institut Teknologi Tangerang Selatan (ITTS) bridging network infrastructure, cybersecurity, and thoughtful web interfaces.
+</p>
+<p class="mt-5 text-sm leading-7 text-text-secondary md:text-base" data-i18n="about_body">
+From configuring MikroTik load balancers and OpenWrt virtual labs to researching mobile-first campus applications and local AI workspaces with Ollama, I approach every technical challenge with patience, structured clarity, and respect for the people using the system.
+</p>
+<div class="mt-7 flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted transition-all duration-300 hover:border-bronze-400/45 hover:text-text-primary">MikroTik &amp; Cisco Networking</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted transition-all duration-300 hover:border-bronze-400/45 hover:text-text-primary">Linux &amp; System Admin</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted transition-all duration-300 hover:border-bronze-400/45 hover:text-text-primary">Cyber Security &amp; Wazuh SIEM</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted transition-all duration-300 hover:border-bronze-400/45 hover:text-text-primary">Local LLM (Ollama)</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted transition-all duration-300 hover:border-bronze-400/45 hover:text-text-primary">Front-End &amp; UX Research</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 xl:grid-cols-3">
+<article class="group relative overflow-hidden rounded-[1.35rem] border border-stroke bg-surface px-6 py-6 transition-all duration-500 hover:-translate-y-1 hover:border-bronze-400/40 shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+<div aria-hidden="true" class="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-bronze-400/0 blur-[55px] transition-all duration-500 group-hover:bg-bronze-400/15"></div>
+<div class="relative z-10 flex items-start gap-4">
+<span class="shrink-0 font-display text-xl italic text-muted transition-colors duration-300 group-hover:text-bronze-300">01</span>
+<div class="min-w-0">
+<h3 class="text-base font-medium tracking-tight text-text-primary" data-i18n="pillar1_title">Network &amp; Infrastructure</h3>
+<p class="mt-2 text-xs leading-5 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="pillar1_desc">Designing resilient LAN/WAN architectures, MikroTik PCC load balancing, Cisco routing, and OpenWrt/GNS3 virtual labs.</p>
+</div>
+</div>
+<span class="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-stroke transition-all duration-300 group-hover:scale-125 group-hover:bg-bronze-300"></span>
+</article>
+<article class="group relative overflow-hidden rounded-[1.35rem] border border-stroke bg-surface px-6 py-6 transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/40 shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+<div aria-hidden="true" class="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-sky-400/0 blur-[55px] transition-all duration-500 group-hover:bg-sky-400/15"></div>
+<div class="relative z-10 flex items-start gap-4">
+<span class="shrink-0 font-display text-xl italic text-muted transition-colors duration-300 group-hover:text-sky-300">02</span>
+<div class="min-w-0">
+<h3 class="text-base font-medium tracking-tight text-text-primary" data-i18n="pillar2_title">Cyber Security &amp; SysAdmin</h3>
+<p class="mt-2 text-xs leading-5 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="pillar2_desc">Administering Linux/Windows servers, analyzing SIEM telemetry with Wazuh, and hardening web application security boundaries.</p>
+</div>
+</div>
+<span class="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-stroke transition-all duration-300 group-hover:scale-125 group-hover:bg-sky-300"></span>
+</article>
+<article class="group relative overflow-hidden rounded-[1.35rem] border border-stroke bg-surface px-6 py-6 transition-all duration-500 hover:-translate-y-1 hover:border-bronze-400/40 shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+<div aria-hidden="true" class="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-bronze-400/0 blur-[55px] transition-all duration-500 group-hover:bg-bronze-400/15"></div>
+<div class="relative z-10 flex items-start gap-4">
+<span class="shrink-0 font-display text-xl italic text-muted transition-colors duration-300 group-hover:text-bronze-300">03</span>
+<div class="min-w-0">
+<h3 class="text-base font-medium tracking-tight text-text-primary" data-i18n="pillar3_title">Web UX &amp; Local AI Workspaces</h3>
+<p class="mt-2 text-xs leading-5 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="pillar3_desc">Translating empirical user research into mobile-first web apps and local Large Language Model interfaces powered by Ollama.</p>
+</div>
+</div>
+<span class="absolute right-4 top-4 h-1.5 w-1.5 rounded-full bg-stroke transition-all duration-300 group-hover:scale-125 group-hover:bg-bronze-300"></span>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section id="education" class="relative overflow-hidden bg-bg pb-24 pt-4 md:pb-32 md:pt-8">
+<div aria-hidden="true" class="pointer-events-none absolute -left-40 top-32 h-[30rem] w-[30rem] rounded-full bg-sky-500/[0.06] blur-[140px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-48 bottom-10 h-[32rem] w-[32rem] rounded-full bg-bronze-400/[0.06] blur-[150px]"></div>
+<div class="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+<div class="mb-10 md:mb-12">
+<div class="mb-6 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="edu_label">Education</span>
+<span class="h-px flex-1 bg-gradient-to-r from-bronze-400/70 to-transparent"></span>
+</div>
+<div class="grid gap-6 md:grid-cols-12 md:items-end">
+<h2 class="text-5xl leading-[0.95] tracking-[-0.04em] text-text-primary sm:text-6xl md:col-span-8 md:text-7xl" data-i18n="edu_heading_html">
+Foundations that shaped<br>my <span class="font-display italic text-bronze-300">discipline.</span>
+</h2>
+<p class="max-w-md text-sm leading-7 text-text-secondary md:col-span-4 md:text-base" data-i18n="edu_subtitle">
+Academic rigor in Information Technology and Computer &amp; Network Engineering, paired with hands-on leadership in campus labs and technical bootcamps.
+</p>
+</div>
+</div>
+<div class="space-y-6">
+<article class="group relative overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-bronze-400/40 md:p-7 shadow-[0_22px_70px_rgba(0,0,0,0.35)]">
+<div aria-hidden="true" class="pointer-events-none absolute -right-28 -top-28 h-64 w-64 rounded-full bg-bronze-400/[0.07] blur-[75px] transition duration-700 group-hover:bg-bronze-400/[0.14]"></div>
+<div class="relative grid gap-6 lg:grid-cols-[104px_minmax(0,1fr)_auto] lg:items-start">
+<div class="flex h-[104px] w-[104px] flex-col items-center justify-center overflow-hidden rounded-[1.4rem] border border-stroke bg-surface-elevated p-3 shadow-inner">
+<span class="font-display text-2xl font-bold italic text-bronze-300">ITTS</span>
+<span class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted">Tangsel</span>
+</div>
+<div>
+<span class="inline-flex rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-bronze-300" data-i18n="edu_higher_badge">Higher Education • Undergraduate</span>
+<h3 class="mt-3 text-2xl font-medium tracking-tight text-text-primary md:text-3xl">Institut Teknologi Tangerang Selatan (ITTS)</h3>
+<div class="mt-3 space-y-2">
+<div class="flex items-start gap-2.5 text-text-secondary">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-bronze-300"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+<p class="text-sm md:text-base" data-i18n="edu_itts_degree">Bachelor’s Degree (S1) — Information Technology (NIM: 1002250043)</p>
+</div>
+<div class="flex items-center gap-2.5 text-sm text-muted">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sky-300"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<p>South Tangerang, Banten, Indonesia</p>
+</div>
+</div>
+<div class="mt-5">
+<p class="mb-3 text-[10px] uppercase tracking-[0.2em] text-muted" data-i18n="edu_coursework_label">Relevant Coursework &amp; Focus</p>
+<div class="flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Computer Networks</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Network Monitoring Technology</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Web Application Security</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Front-End Lab &amp; UX Research</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Operating Systems &amp; Linux</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Artificial Intelligence &amp; Python</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Information Systems</span>
+</div>
+</div>
+</div>
+<div class="inline-flex w-fit items-center gap-2.5 rounded-full border border-stroke bg-surface-elevated px-4 py-2.5 text-xs text-muted">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-bronze-300"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+<span>2025 — Present</span>
+</div>
+</div>
+</article>
+<article class="group relative overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-sky-400/40 md:p-7 shadow-[0_22px_70px_rgba(0,0,0,0.35)]">
+<div aria-hidden="true" class="pointer-events-none absolute -right-28 -top-28 h-64 w-64 rounded-full bg-sky-400/[0.06] blur-[75px] transition duration-700 group-hover:bg-sky-400/[0.12]"></div>
+<div class="relative grid gap-6 lg:grid-cols-[104px_minmax(0,1fr)_auto] lg:items-start">
+<div class="flex h-[104px] w-[104px] flex-col items-center justify-center overflow-hidden rounded-[1.4rem] border border-stroke bg-surface-elevated p-3 shadow-inner">
+<span class="font-display text-xl font-bold italic text-sky-300">SMKN 6</span>
+<span class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted">TKJ • Nemtas</span>
+</div>
+<div>
+<span class="inline-flex rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-sky-300" data-i18n="edu_vocational_badge">Vocational Engineering Education</span>
+<h3 class="mt-3 text-2xl font-medium tracking-tight text-text-primary md:text-3xl">SMK Negeri 6 Kota Tangerang Selatan</h3>
+<div class="mt-3 space-y-2">
+<div class="flex items-start gap-2.5 text-text-secondary">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0 text-sky-300"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+<p class="text-sm md:text-base" data-i18n="edu_smk_major">Computer and Network Engineering (Teknik Komputer dan Jaringan / TKJ)</p>
+</div>
+<div class="flex items-center gap-2.5 text-sm text-muted">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-bronze-300"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<p>Serpong Utara, South Tangerang, Banten</p>
+</div>
+</div>
+<div class="mt-5">
+<div class="flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">LAN/WAN Installation</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">MikroTik RouterOS (DHCP, NAT, Firewall)</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">Linux Server Administration</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1.5 text-[10px] text-muted">PC Assembly &amp; Hardware Diagnostics</span>
+</div>
+</div>
+</div>
+<div class="inline-flex w-fit items-center gap-2.5 rounded-full border border-stroke bg-surface-elevated px-4 py-2.5 text-xs text-muted">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-300"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+<span>2022 — 2025</span>
+</div>
+</div>
+</article>
+</div>
+<div class="mb-7 mt-14 flex items-center gap-4">
+<div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-bronze-300"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-[0.23em] text-muted" data-i18n="edu_sub_label">Selected leadership &amp; learning experiences</p>
+<h3 class="mt-1 text-2xl font-medium text-text-primary md:text-3xl" data-i18n="edu_sub_heading">Academic &amp; Community Initiatives</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+<article class="group relative overflow-hidden rounded-[1.65rem] border border-stroke bg-surface p-5 transition-all duration-500 hover:border-bronze-400/40 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
+<div class="relative z-10 grid gap-5 sm:grid-cols-[80px_1fr]">
+<div class="flex h-[80px] w-[80px] flex-col items-center justify-center rounded-[1.2rem] border border-stroke bg-surface-elevated p-3">
+<span class="font-display text-lg font-bold italic text-bronze-300">BMK</span>
+<span class="text-[8px] uppercase tracking-widest text-muted">Org</span>
+</div>
+<div>
+<h4 class="text-lg font-medium tracking-tight text-text-primary md:text-xl">BimaKara Tech Organization</h4>
+<div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted">
+<span class="text-bronze-300">Vice Chairman &amp; Infrastructure Lead</span>
+<span>Jan 2026 — Present</span>
+</div>
+<p class="mt-3.5 text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="acad1_desc">
+Coordinated campus server rack access at ITTS with Prof. Onno W. Purbo, organized student networking labs, and led cross-school technical literacy initiatives.
+</p>
+</div>
+</div>
+</article>
+<article class="group relative overflow-hidden rounded-[1.65rem] border border-stroke bg-surface p-5 transition-all duration-500 hover:border-sky-400/40 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
+<div class="relative z-10 grid gap-5 sm:grid-cols-[80px_1fr]">
+<div class="flex h-[80px] w-[80px] flex-col items-center justify-center rounded-[1.2rem] border border-stroke bg-surface-elevated p-3">
+<span class="font-display text-lg font-bold italic text-sky-300">ITTS</span>
+<span class="text-[8px] uppercase tracking-widest text-muted">Speaker</span>
+</div>
+<div>
+<h4 class="text-lg font-medium tracking-tight text-text-primary md:text-xl">ITTS Open House: Data Science &amp; IS</h4>
+<div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted">
+<span class="text-sky-300">Featured Student Speaker</span>
+<span>May 2026</span>
+</div>
+<p class="mt-3.5 text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="acad2_desc">
+Co-presented an interactive seminar on Data Science and Information Systems alongside Ilyasa Firgia Ikram, onboarding external learners to ITTS OpenCourseware.
+</p>
+</div>
+</div>
+</article>
+<article class="group relative overflow-hidden rounded-[1.65rem] border border-stroke bg-surface p-5 transition-all duration-500 hover:border-bronze-400/40 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
+<div class="relative z-10 grid gap-5 sm:grid-cols-[80px_1fr]">
+<div class="flex h-[80px] w-[80px] flex-col items-center justify-center rounded-[1.2rem] border border-stroke bg-surface-elevated p-3">
+<span class="font-display text-lg font-bold italic text-bronze-300">LKS</span>
+<span class="text-[8px] uppercase tracking-widest text-muted">Rank #4</span>
+</div>
+<div>
+<h4 class="text-lg font-medium tracking-tight text-text-primary md:text-xl">LKS IT Network System Administration</h4>
+<div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted">
+<span class="text-bronze-300">4th Place City Finalist (of 23)</span>
+<span>Feb 2024</span>
+</div>
+<p class="mt-3.5 text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="acad3_desc">
+Represented SMKN 6 Kota Tangerang Selatan in the city-wide Student Skills Competition (LKS), demonstrating rapid server deployment, routing, and system administration.
+</p>
+</div>
+</div>
+</article>
+<article class="group relative overflow-hidden rounded-[1.65rem] border border-stroke bg-surface p-5 transition-all duration-500 hover:border-sky-400/40 md:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
+<div class="relative z-10 grid gap-5 sm:grid-cols-[80px_1fr]">
+<div class="flex h-[80px] w-[80px] flex-col items-center justify-center rounded-[1.2rem] border border-stroke bg-surface-elevated p-3">
+<span class="font-display text-lg font-bold italic text-sky-300">IRMBH</span>
+<span class="text-[8px] uppercase tracking-widest text-muted">Leader</span>
+</div>
+<div>
+<h4 class="text-lg font-medium tracking-tight text-text-primary md:text-xl">Ikatan Remaja Masjid Baitul Haniif</h4>
+<div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted">
+<span class="text-sky-300">Chairman &amp; Community Mentor</span>
+<span>Dec 2021 — May 2025</span>
+</div>
+<p class="mt-3.5 text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary" data-i18n="acad4_desc">
+Led youth community programs, social outreach, and team mentorship over 3.5 years, cultivating a warm, respectful, and collaborative environment.
+</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="experience" class="relative overflow-clip bg-bg pb-24 pt-4 md:pb-32 md:pt-8">
+<div aria-hidden="true" class="pointer-events-none absolute -left-52 top-[20%] h-[34rem] w-[34rem] rounded-full bg-bronze-400/[0.06] blur-[150px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-52 bottom-[10%] h-[36rem] w-[36rem] rounded-full bg-sky-500/[0.06] blur-[160px]"></div>
+<div class="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+<div class="mb-14 md:mb-20">
+<div class="mb-6 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="exp_label">Professional Experience</span>
+<span class="h-px flex-1 bg-gradient-to-r from-bronze-400/70 to-transparent"></span>
+</div>
+<div class="grid gap-7 md:grid-cols-12 md:items-end">
+<h2 class="text-5xl leading-[0.95] tracking-[-0.045em] text-text-primary sm:text-6xl md:col-span-8 md:text-7xl" data-i18n="exp_heading_html">
+Where discipline became<br><span class="font-display italic text-bronze-300">real reliability.</span>
+</h2>
+<p class="max-w-md text-sm leading-7 text-text-secondary md:col-span-4 md:text-base" data-i18n="exp_subtitle">
+Field roles and technical leadership where I combined network engineering, hardware diagnostics, cybersecurity education, and clear communication.
+</p>
+</div>
+</div>
+<div class="grid gap-14 lg:grid-cols-[0.36fr_0.64fr] lg:gap-16">
+<div class="h-fit lg:sticky lg:top-28 lg:self-start">
+<div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-stroke bg-surface-elevated shadow-lg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-bronze-300"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+</div>
+<p class="mt-8 text-xs uppercase tracking-[0.25em] text-bronze-300/80" data-i18n="exp_journey_label">My journey</p>
+<h3 class="mt-4 max-w-sm text-3xl font-medium leading-tight text-text-primary md:text-4xl" data-i18n="exp_journey_title">
+Troubleshooting, building, and mentoring with steady hands.
+</h3>
+<p class="mt-6 max-w-sm text-sm leading-7 text-muted" data-i18n="exp_journey_desc">
+Whether crimping RJ45 cables on-site, diagnosing enterprise routers, or teaching CLI fundamentals to high school students, every role taught me that great engineering starts with patience and clarity.
+</p>
+<div class="mt-8 flex items-center gap-3">
+<span class="h-2 w-2 rounded-full bg-bronze-300 shadow-[0_0_12px_rgba(200,159,116,1)]"></span>
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-muted">2024 — 2026</span>
+</div>
+</div>
+<div class="relative">
+<div aria-hidden="true" class="absolute bottom-0 left-[15px] top-0 w-px bg-stroke md:left-[19px]"></div>
+<div aria-hidden="true" class="absolute bottom-0 left-[15px] top-0 w-px bg-gradient-to-b from-bronze-300 via-sky-400 to-bronze-500/10 shadow-[0_0_14px_rgba(200,159,116,0.5)] md:left-[19px]"></div>
+<div class="space-y-8 md:space-y-10">
+<article class="group relative pl-12 md:pl-16">
+<div class="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-bronze-400/50 bg-bg md:h-10 md:w-10">
+<span class="h-2 w-2 rounded-full bg-bronze-300 transition-transform duration-300 group-hover:scale-150"></span>
+</div>
+<div class="relative overflow-hidden rounded-[2rem] border border-stroke bg-surface p-6 transition-all duration-500 group-hover:border-bronze-400/40 md:p-8 shadow-[0_22px_65px_rgba(0,0,0,0.35)]">
+<div class="relative z-10">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-start gap-4">
+<div class="flex h-[70px] w-[70px] shrink-0 flex-col items-center justify-center rounded-[1.25rem] border border-stroke bg-surface-elevated p-2">
+<span class="font-display text-lg font-bold italic text-bronze-300">PCN</span>
+<span class="font-mono text-[8px] uppercase text-muted">Network</span>
+</div>
+<div>
+<div class="mb-1.5 flex items-center gap-3">
+<span class="font-display text-lg italic text-bronze-300">01</span>
+<span class="h-px w-8 bg-stroke"></span>
+</div>
+<h3 class="text-xl font-medium tracking-tight text-text-primary md:text-2xl">PT Pacific Cipta Nusantara</h3>
+<p class="mt-1.5 text-sm text-bronze-300">Freelance Network Technician</p>
+</div>
+</div>
+<div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">Jul 2025 — Present</span>
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">South Tangerang, ID</span>
+</div>
+</div>
+<p class="mt-5 text-sm leading-7 text-text-secondary md:text-base" data-i18n="exp1_summary">
+Provided on-demand field engineering support for network installation, router configuration, troubleshooting, and infrastructure maintenance.
+</p>
+<div class="mt-6 space-y-2.5 border-t border-stroke pt-5 text-sm text-muted">
+<p>• Maintained LAN/WAN connectivity and resolved physical &amp; logical routing bottlenecks.</p>
+<p>• Configured MikroTik DHCP, NAT, firewall rules, and wireless access points for stable daily operations.</p>
+<p>• Conducted preventive network diagnostics and topology documentation for client sites.</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">LAN/WAN</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">MikroTik RouterOS</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Network Troubleshooting</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">TCP/IP</span>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative pl-12 md:pl-16">
+<div class="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-sky-400/50 bg-bg md:h-10 md:w-10">
+<span class="h-2 w-2 rounded-full bg-sky-300 transition-transform duration-300 group-hover:scale-150"></span>
+</div>
+<div class="relative overflow-hidden rounded-[2rem] border border-stroke bg-surface p-6 transition-all duration-500 group-hover:border-sky-400/40 md:p-8 shadow-[0_22px_65px_rgba(0,0,0,0.35)]">
+<div class="relative z-10">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-start gap-4">
+<div class="flex h-[70px] w-[70px] shrink-0 flex-col items-center justify-center rounded-[1.25rem] border border-stroke bg-surface-elevated p-2">
+<span class="font-display text-lg font-bold italic text-sky-300">CSW</span>
+<span class="font-mono text-[8px] uppercase text-muted">SecOps</span>
+</div>
+<div>
+<div class="mb-1.5 flex items-center gap-3">
+<span class="font-display text-lg italic text-sky-300">02</span>
+<span class="h-px w-8 bg-stroke"></span>
+</div>
+<h3 class="text-xl font-medium tracking-tight text-text-primary md:text-2xl">Cyber Security Workshop — SMKN 6</h3>
+<p class="mt-1.5 text-sm text-sky-300">Chief Organizer &amp; Lead Coordinator</p>
+</div>
+</div>
+<div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">Jun 2026</span>
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">South Tangerang, ID</span>
+</div>
+</div>
+<p class="mt-5 text-sm leading-7 text-text-secondary md:text-base" data-i18n="exp2_summary">
+Organized and led a practical Cyber Security Workshop at SMKN 6 Kota Tangerang Selatan, bridging foundational network concepts with modern defensive security.
+</p>
+<div class="mt-6 space-y-2.5 border-t border-stroke pt-5 text-sm text-muted">
+<p>• Directed end-to-end event planning, curriculum structure, speaker coordination, and participant labs.</p>
+<p>• Partnered with Generation Girl Tangerang on "Digital Security Fundamentals in the AI Era" (Aug 2026).</p>
+<p>• Advocated for strong networking fundamentals prior to offensive/defensive security specialization.</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Cyber Security</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Event Leadership</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Speaker Coordination</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Infosec Literacy</span>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative pl-12 md:pl-16">
+<div class="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-bronze-400/50 bg-bg md:h-10 md:w-10">
+<span class="h-2 w-2 rounded-full bg-bronze-300 transition-transform duration-300 group-hover:scale-150"></span>
+</div>
+<div class="relative overflow-hidden rounded-[2rem] border border-stroke bg-surface p-6 transition-all duration-500 group-hover:border-bronze-400/40 md:p-8 shadow-[0_22px_65px_rgba(0,0,0,0.35)]">
+<div class="relative z-10">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-start gap-4">
+<div class="flex h-[70px] w-[70px] shrink-0 flex-col items-center justify-center rounded-[1.25rem] border border-stroke bg-surface-elevated p-2">
+<span class="font-display text-lg font-bold italic text-bronze-300">ITNSA</span>
+<span class="font-mono text-[8px] uppercase text-muted">Bootcamp</span>
+</div>
+<div>
+<div class="mb-1.5 flex items-center gap-3">
+<span class="font-display text-lg italic text-bronze-300">03</span>
+<span class="h-px w-8 bg-stroke"></span>
+</div>
+<h3 class="text-xl font-medium tracking-tight text-text-primary md:text-2xl">Bootcamp ITNSA by BimaKara</h3>
+<p class="mt-1.5 text-sm text-bronze-300">Chief Organizer &amp; Technical Speaker</p>
+</div>
+</div>
+<div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">Jan 2026</span>
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">SMKN 6 South Tangerang</span>
+</div>
+</div>
+<p class="mt-5 text-sm leading-7 text-text-secondary md:text-base" data-i18n="exp3_summary">
+Designed and led a multi-day IT Network System Administration (ITNSA) Bootcamp, mentoring vocational students in Linux server administration and networking.
+</p>
+<div class="mt-6 space-y-2.5 border-t border-stroke pt-5 text-sm text-muted">
+<p>• Delivered technical lectures and live labs on Linux CLI, binary calculation, subnetting, and basic server setup.</p>
+<p>• Coordinated directly with Prof. Onno W. Purbo, M.Eng., Ph.D. for official certificate endorsement.</p>
+<p>• Guided 18+ TKJ and RPL students across 3 intensive training days with structured attendance and lab modules.</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Linux CLI</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Binary &amp; Subnetting</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Server Provisioning</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Technical Teaching</span>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative pl-12 md:pl-16">
+<div class="absolute left-0 top-8 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-sky-400/50 bg-bg md:h-10 md:w-10">
+<span class="h-2 w-2 rounded-full bg-sky-300 transition-transform duration-300 group-hover:scale-150"></span>
+</div>
+<div class="relative overflow-hidden rounded-[2rem] border border-stroke bg-surface p-6 transition-all duration-500 group-hover:border-sky-400/40 md:p-8 shadow-[0_22px_65px_rgba(0,0,0,0.35)]">
+<div class="relative z-10">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-start gap-4">
+<div class="flex h-[70px] w-[70px] shrink-0 flex-col items-center justify-center rounded-[1.25rem] border border-stroke bg-surface-elevated p-2">
+<span class="font-display text-lg font-bold italic text-sky-300">RGS</span>
+<span class="font-mono text-[8px] uppercase text-muted">IT Intern</span>
+</div>
+<div>
+<div class="mb-1.5 flex items-center gap-3">
+<span class="font-display text-lg italic text-sky-300">04</span>
+<span class="h-px w-8 bg-stroke"></span>
+</div>
+<h3 class="text-xl font-medium tracking-tight text-text-primary md:text-2xl">PT Rei Global Servisindo</h3>
+<p class="mt-1.5 text-sm text-sky-300">IT Support &amp; Hardware/Network Intern</p>
+</div>
+</div>
+<div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">Jun 2024 — Nov 2024</span>
+<span class="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface-elevated px-3.5 py-2 text-xs text-muted">Cipondoh, Tangerang</span>
+</div>
+</div>
+<p class="mt-5 text-sm leading-7 text-text-secondary md:text-base" data-i18n="exp4_summary">
+Completed a 6-month industrial placement supporting enterprise and consumer hardware diagnostics, Acer device servicing, OS deployment, and network troubleshooting.
+</p>
+<div class="mt-6 space-y-2.5 border-t border-stroke pt-5 text-sm text-muted">
+<p>• Performed laptop and PC disassembly, NIC/RAM/HDD replacements, and optical-drive-to-SSD caddy upgrades.</p>
+<p>• Installed and configured Windows/Linux operating systems, drivers, and office software suites.</p>
+<p>• Assisted customers with empathetic, clear technical communication and after-sales diagnostics.</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Hardware Diagnostics</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">OS Installation</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">Storage &amp; RAM Upgrades</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[11px] text-muted">IT Technical Support</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="work" class="relative overflow-clip bg-bg pb-24 pt-4 md:pb-32 md:pt-8">
+<div aria-hidden="true" class="pointer-events-none absolute -left-52 top-[15%] h-[34rem] w-[34rem] rounded-full bg-sky-500/[0.06] blur-[150px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-52 bottom-[10%] h-[36rem] w-[36rem] rounded-full bg-bronze-400/[0.06] blur-[160px]"></div>
+<div class="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+<div>
+<div class="mb-6 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="work_label">Selected Projects</span>
+<span class="h-px flex-1 bg-gradient-to-r from-bronze-400/70 to-transparent"></span>
+</div>
+<div class="grid gap-8 md:grid-cols-12 md:items-end">
+<div class="md:col-span-8">
+<h2 class="text-5xl leading-[0.95] tracking-[-0.045em] text-text-primary sm:text-6xl md:text-7xl" data-i18n="work_heading_html">
+Systems engineered into<br><span class="font-display italic text-bronze-300">dependable work.</span>
+</h2>
+</div>
+<div class="md:col-span-4">
+<p class="max-w-md text-sm leading-7 text-text-secondary md:text-base" data-i18n="work_subtitle">
+A curated collection of network architectures, local AI interfaces, IoT telemetry, cybersecurity labs, and mobile-first UX research projects.
+</p>
+<div class="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted">
+<span class="h-2 w-2 rounded-full bg-bronze-300"></span>
+<span id="project-count-label">8 projects displayed</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 overflow-x-auto pb-2 md:mt-14">
+<div class="inline-flex min-w-max items-center gap-2 rounded-full border border-stroke bg-surface p-2 shadow-lg" role="tablist" aria-label="Project category filter">
+<button type="button" data-filter="all" class="proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-slate-950 bg-gradient-to-r from-bronze-300 via-bronze-200 to-sky-200 shadow-[0_0_18px_rgba(200,159,116,0.35)]">
+<span>All Works (8)</span>
+</button>
+<button type="button" data-filter="network" class="proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-muted hover:text-text-primary">
+<span>Network &amp; Infra (3)</span>
+</button>
+<button type="button" data-filter="ai-sec" class="proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-muted hover:text-text-primary">
+<span>AI &amp; Cyber Security (3)</span>
+</button>
+<button type="button" data-filter="web-ux" class="proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-muted hover:text-text-primary">
+<span>Web &amp; Product UX (2)</span>
+</button>
+</div>
+</div>
+<div id="projects-grid" class="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-2">
+<article data-category="ai-sec" data-proj-id="ollama" tabindex="0" role="button" aria-label="Open AI Launcher Web (Ollama) case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="AI Launcher Web Ollama thumbnail"><use href="#sym-graphic-1"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-bronze-200 backdrop-blur-md">AI &amp; Local LLM</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">Web Workspace · Local LLM Runner · Prompt Engineering</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-bronze-300 group-hover:bg-bronze-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">AI Launcher Web (Ollama)</h3>
+<span class="font-display text-lg italic text-bronze-300/80">01</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+A self-hosted web interface built to run, manage, and benchmark local Large Language Models via Ollama—featuring model switching, system prompt templates, and private offline inference workflows.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Ollama</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Local LLM</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Prompt Engineering</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Web Interface</span>
+</div>
+</div>
+</article>
+<article data-category="web-ux" data-proj-id="lablink" tabindex="0" role="button" aria-label="Open LabLink ITTS case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="LabLink ITTS project thumbnail"><use href="#sym-graphic-2"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-sky-200 backdrop-blur-md">Product UX &amp; Web</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">Mobile-First Web App · UX Research · Front-End Lab</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-sky-300 group-hover:bg-sky-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">LabLink — Campus Lab Booking</h3>
+<span class="font-display text-lg italic text-sky-300/80">02</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+A mobile-first laboratory equipment &amp; room lending platform for ITTS students, replacing verbal bureaucracy (84.2% pain point) with remote assistant approval (ACC), real-time inventory health tags, and digital receipts.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">UX Research (n=19)</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Mobile-First Android</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Front-End Engineering</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Digital Receipt</span>
+</div>
+</div>
+</article>
+<article data-category="network" data-proj-id="bpbd-iot" tabindex="0" role="button" aria-label="Open BPBD Banten IoT Evacuation Monitoring case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="BPBD Banten IoT project thumbnail"><use href="#sym-graphic-3"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-bronze-200 backdrop-blur-md">IoT &amp; Civic Tech</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">IoT Telemetry · Disaster Response · BPBD Banten PoC</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-bronze-300 group-hover:bg-bronze-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">BPBD Banten IoT Evacuation Monitor</h3>
+<span class="font-display text-lg italic text-bronze-300/80">03</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+A proof-of-concept IoT monitoring system developed in collaboration with BPBD Banten (July 2026) to provide real-time telemetry, environmental tracking, and status visibility for disaster evacuation posts.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">IoT Sensors</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">BPBD Banten</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Telemetry Dashboard</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Disaster Management</span>
+</div>
+</div>
+</article>
+<article data-category="network" data-proj-id="mikrotik-pcc" tabindex="0" role="button" aria-label="Open MikroTik Load Balancing PCC case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="MikroTik Load Balancing PCC thumbnail"><use href="#sym-graphic-4"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-sky-200 backdrop-blur-md">Network Engineering</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">Multi-ISP Architecture · RouterOS · High Availability</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-sky-300 group-hover:bg-sky-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">MikroTik Dual-ISP PCC &amp; Failover</h3>
+<span class="font-display text-lg italic text-sky-300/80">04</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+An enterprise network optimization architecture implementing Per Connection Classifier (PCC) load balancing and automated multi-ISP failover on MikroTik RouterOS to maximize aggregate throughput and zero-downtime continuity.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">MikroTik RouterOS</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Load Balancing PCC</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Auto-Failover</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">QoS &amp; Throughput</span>
+</div>
+</div>
+</article>
+<article data-category="network" data-proj-id="openwrt-lab" tabindex="0" role="button" aria-label="Open OpenWrt Virtual Lab case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="OpenWrt Virtual Lab thumbnail"><use href="#sym-graphic-5"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-bronze-200 backdrop-blur-md">Virtualization &amp; Book</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">OpenWrt Firmware · GNS3 · VirtualBox · InTech Press</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-bronze-300 group-hover:bg-bronze-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">OpenWrt Virtual Lab &amp; Guidebook</h3>
+<span class="font-display text-lg italic text-bronze-300/80">05</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+A complete virtualized Linux router laboratory combining OpenWrt, LuCI web administration, SSH management, GNS3, and VirtualBox—authored into a practical technical book processed by InTech Press (Aug 2026).
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">OpenWrt</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">GNS3 &amp; VirtualBox</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">LuCI &amp; SSH</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">InTech Press</span>
+</div>
+</div>
+</article>
+<article data-category="ai-sec" data-proj-id="wazuh-soc" tabindex="0" role="button" aria-label="Open Wazuh SIEM and AI SOC case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Wazuh SIEM and AI SOC project thumbnail"><use href="#sym-graphic-6"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-sky-200 backdrop-blur-md">Cyber Security &amp; AI</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">SIEM Telemetry · Threat Detection · Local LLM Triage</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-sky-300 group-hover:bg-sky-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">Wazuh SIEM &amp; AI-Assisted SOC</h3>
+<span class="font-display text-lg italic text-sky-300/80">06</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+A Security Operations Center (SOC) laboratory pairing Wazuh endpoint monitoring and log analysis with local Ollama LLM inference to automate incident triage and threat dataset curation.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Wazuh SIEM</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">SOC Operations</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Ollama AI</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Log Analysis</span>
+</div>
+</div>
+</article>
+<article data-category="ai-sec" data-proj-id="websec-sop" tabindex="0" role="button" aria-label="Open Web Application Security Lab case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Web Application Security Lab thumbnail"><use href="#sym-graphic-7"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-bronze-200 backdrop-blur-md">Application Security</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">Same-Origin Policy · Trust Boundaries · HTTP Analysis</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-bronze-300 group-hover:bg-bronze-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">Web App Security &amp; SOP Lab</h3>
+<span class="font-display text-lg italic text-bronze-300/80">07</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+An empirical application security study investigating Same-Origin Policy (`scheme + host + port`) storage isolation, raw HTTP packet inspection via `curl`, and client-side DOM manipulation countermeasures.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Python 3.14 HTTP</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Same-Origin Policy</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">DOM Security</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">cURL &amp; DevTools</span>
+</div>
+</div>
+</article>
+<article data-category="web-ux" data-proj-id="cloud-automation" tabindex="0" role="button" aria-label="Open Cloud Workflow and Digital Infrastructure case study" class="project-card group relative block overflow-hidden rounded-[2rem] border border-stroke bg-surface transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45 cursor-pointer shadow-[0_22px_65px_rgba(0,0,0,0.4)]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#0c111d]">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Cloud Automation and Digital Ventures thumbnail"><use href="#sym-graphic-8"/></svg>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/10"></div>
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20 dot-grid-overlay"></div>
+<div class="absolute left-5 top-5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-sky-200 backdrop-blur-md">Automation &amp; Cloud</div>
+<div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+<p class="text-xs text-slate-200/85">GitHub Actions · Cloudflare DNS · Local Business Profiles</p>
+<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-md transition-all duration-300 group-hover:border-sky-300 group-hover:bg-sky-500 group-hover:text-slate-950">↗</span>
+</div>
+</div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-5">
+<h3 class="text-2xl font-medium tracking-tight text-text-primary md:text-[1.65rem]">Cloud Automation &amp; Local Ventures</h3>
+<span class="font-display text-lg italic text-sky-300/80">08</span>
+</div>
+<p class="mt-3.5 min-h-[68px] text-sm leading-6 text-muted transition-colors duration-300 group-hover:text-text-secondary">
+End-to-end management of scheduled GitHub Actions automation bots (`nhdaily`), Cloudflare-secured WordPress domains, Octavia game servers, and Google Business Profiles for local South Tangerang ventures.
+</p>
+<div class="mt-5 flex flex-wrap gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">GitHub Actions</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Cloudflare &amp; DNS</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">Termius SSH</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">WordPress &amp; Hosting</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="explorations" class="relative overflow-hidden bg-bg py-24 md:py-32">
+<div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-1/2 h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-bronze-400/[0.06] blur-[160px]"></div>
+<div class="relative z-10 mx-auto max-w-[1300px] px-6 md:px-10 lg:px-16">
+<div class="mx-auto max-w-2xl text-center">
+<div class="mb-6 inline-flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="exp_gallery_label">System Architect &amp; Builder</span>
+<span class="h-px w-8 bg-stroke"></span>
+</div>
+<h2 class="text-5xl tracking-tight text-text-primary md:text-7xl">
+Architecture <span class="font-display italic text-bronze-300">Mockup</span>
+</h2>
+<p class="mx-auto mt-4 max-w-lg text-sm leading-7 text-muted md:text-base" data-i18n="exp_gallery_desc">
+A curated look inside my network topologies, Packet Tracer downtime simulations, mobile UI wireframes, and local AI security pipelines. Click any card to inspect the technical blueprint.
+</p>
+</div>
+<div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<button type="button" data-exp-id="exp-1" aria-label="Open Packet Tracer Topology exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Packet Tracer Network Topology"><use href="#sym-graphic-4"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-bronze-300">01 • Network Simulation</span>
+<h3 class="mt-1 text-lg font-medium text-white">Cisco Packet Tracer: Normal vs. Downtime Hop Analysis</h3>
+<p class="mt-1 text-xs text-slate-300/80">Subnet 192.168.10.x &amp; 20.x DHCP routing &amp; ICMP traceroute diagnostics</p>
+</div>
+</button>
+<button type="button" data-exp-id="exp-2" aria-label="Open LabLink Android UI exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="LabLink Mobile UI Wireframe"><use href="#sym-graphic-2"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-sky-300">02 • Mobile-First UX</span>
+<h3 class="mt-1 text-lg font-medium text-white">LabLink Persona &quot;Raka&quot; &amp; QR Receipt Pass</h3>
+<p class="mt-1 text-xs text-slate-300/80">Designed for 73.7% Android student demographic with remote ACC flow</p>
+</div>
+</button>
+<button type="button" data-exp-id="exp-3" aria-label="Open OpenWrt LuCI &amp; GNS3 exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="OpenWrt Virtual Lab Topology"><use href="#sym-graphic-5"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-bronze-300">03 • Virtual Router OS</span>
+<h3 class="mt-1 text-lg font-medium text-white">OpenWrt LuCI &amp; GNS3 Multi-VM Topology</h3>
+<p class="mt-1 text-xs text-slate-300/80">VirtualBox bridge interfaces, firewall zones, and SSH management</p>
+</div>
+</button>
+<button type="button" data-exp-id="exp-4" aria-label="Open Ollama Local AI Workspace exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Ollama Local AI Workspace"><use href="#sym-graphic-1"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-sky-300">04 • AI Engineering</span>
+<h3 class="mt-1 text-lg font-medium text-white">Ollama Local LLM Prompt &amp; Evaluation Console</h3>
+<p class="mt-1 text-xs text-slate-300/80">Zero-cloud latency local model switching and structured output testing</p>
+</div>
+</button>
+<button type="button" data-exp-id="exp-5" aria-label="Open Wazuh SIEM Threat Radar exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-bronze-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Wazuh SIEM SOC Dashboard"><use href="#sym-graphic-6"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-bronze-300">05 • Security Operations</span>
+<h3 class="mt-1 text-lg font-medium text-white">Wazuh SIEM Telemetry &amp; AI Alert Triage</h3>
+<p class="mt-1 text-xs text-slate-300/80">Real-time intrusion detection logs paired with local LLM classification</p>
+</div>
+</button>
+<button type="button" data-exp-id="exp-6" aria-label="Open Same-Origin Policy Security Boundary exploration" class="exp-card group relative block aspect-[4/3] w-full overflow-hidden rounded-3xl border border-stroke bg-surface text-left shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-400/45">
+<svg viewBox="0 0 640 360" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Same-Origin Policy Architecture"><use href="#sym-graphic-7"/></svg>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+<span class="font-mono text-[10px] uppercase tracking-widest text-sky-300">06 • Web AppSec</span>
+<h3 class="mt-1 text-lg font-medium text-white">Origin Isolation &amp; Server Trust Boundary</h3>
+<p class="mt-1 text-xs text-slate-300/80">Comparing localhost:8000, localhost:8001, and 127.0.0.1 storage scopes</p>
+</div>
+</button>
+</div>
+</div>
+</section>
+<section id="certificate" class="relative overflow-clip bg-bg pb-24 pt-4 md:pb-32 md:pt-8">
+<div aria-hidden="true" class="pointer-events-none absolute -left-52 top-[12%] h-[34rem] w-[34rem] rounded-full bg-bronze-400/[0.06] blur-[150px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-52 bottom-[5%] h-[36rem] w-[36rem] rounded-full bg-sky-500/[0.06] blur-[160px]"></div>
+<div class="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+<div class="mb-12 md:mb-16">
+<div class="mb-6 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="cert_label">Certificates &amp; Credentials</span>
+<span class="h-px flex-1 bg-gradient-to-r from-bronze-400/70 to-transparent"></span>
+</div>
+<div class="max-w-3xl">
+<h2 class="text-5xl leading-[0.95] tracking-[-0.045em] text-text-primary sm:text-6xl md:text-7xl" data-i18n="cert_heading_html">
+Credentials that<br>validate the <span class="font-display italic text-bronze-300">craft.</span>
+</h2>
+<p class="mt-6 max-w-xl text-sm leading-7 text-text-secondary md:text-base" data-i18n="cert_subtitle">
+National and international certifications, language proficiency scores, and industry credentials across networking, cybersecurity, and communication.
+</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+<button type="button" data-cert-id="cert-1" aria-label="View Network System Assignment Competency Certificate" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-bronze-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-bronze-300">TIME</span>
+</div>
+<span class="font-display text-xl italic text-bronze-300/75">01</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-bronze-300">Competency Certification</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">Network System Assignment Competency</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">PT Time Excelindo</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Demonstrated professional competency in enterprise network installation, routing configuration, troubleshooting, and preventive maintenance.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">Jul 2025 — Jul 2029</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-bronze-300/45 group-hover:text-bronze-200">View credential ↗</span>
+</div>
+</div>
+</button>
+<button type="button" data-cert-id="cert-2" aria-label="View TOEIC 924/995 Certificate" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-sky-300">ETS</span>
+</div>
+<span class="font-display text-xl italic text-sky-300/75">02</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-sky-300">International English • 924 / 995</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">TOEIC — Test of English for International Communication</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">Score: 924 out of 995 (Working Proficiency Plus)</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Verified advanced capability in comprehending international engineering manuals, RFC documentation, and global technical communication.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">Mar 2023</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-sky-300/45 group-hover:text-sky-200">View credential ↗</span>
+</div>
+</div>
+</button>
+<button type="button" data-cert-id="cert-3" aria-label="View LKS ITNSA 4th Place Achievement" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-bronze-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-bronze-300">LKS</span>
+</div>
+<span class="font-display text-xl italic text-bronze-300/75">03</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-bronze-300">City-Level Competition</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">LKS IT Network System Administration (ITNSA)</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">Kota Tangerang Selatan • Ranked 4th of 23</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Achieved 4th place across 23 vocational contenders in South Tangerang, evaluated on Linux/Windows Server administration and Cisco/MikroTik routing.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">Feb 2024</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-bronze-300/45 group-hover:text-bronze-200">View credential ↗</span>
+</div>
+</div>
+</button>
+<button type="button" data-cert-id="cert-4" aria-label="View Generation Girl x BimaKara Digital Security Certificate" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-sky-300">GenG</span>
+</div>
+<span class="font-display text-xl italic text-sky-300/75">04</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-sky-300">Cybersecurity Partnership</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">Digital Security Fundamentals in the AI Era</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">Generation Girl Tangerang × BimaKara</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Awarded for leadership and partnership in delivering cybersecurity and AI safety education at SMAN 3 Kabupaten Tangerang.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">Aug 2026</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-sky-300/45 group-hover:text-sky-200">View credential ↗</span>
+</div>
+</div>
+</button>
+<button type="button" data-cert-id="cert-5" aria-label="View UKBI Certificate" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-bronze-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-bronze-300">UKBI</span>
+</div>
+<span class="font-display text-xl italic text-bronze-300/75">05</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-bronze-300">National Language Certification</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">UKBI — Uji Kemampuan Berbahasa Indonesia</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">Kemendikbudristek • Score: 550 / 800</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Certified strong command of formal and academic Indonesian for technical book authorship, research papers, and institutional correspondence.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">2024</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-bronze-300/45 group-hover:text-bronze-200">View credential ↗</span>
+</div>
+</div>
+</button>
+<button type="button" data-cert-id="cert-6" aria-label="View PT Rei Global Servisindo Internship Certificate" class="cert-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[1.75rem] border border-stroke bg-surface p-6 text-left transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/45 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl border border-stroke bg-surface-elevated">
+<span class="font-mono text-[9px] font-semibold uppercase tracking-wider text-sky-300">RGS</span>
+</div>
+<span class="font-display text-xl italic text-sky-300/75">06</span>
+</div>
+<div class="mt-5">
+<span class="inline-flex items-center rounded-full border border-sky-400/30 bg-sky-500/10 px-3 py-1 text-[9px] uppercase tracking-[0.16em] text-sky-300">Industrial Placement (PKL)</span>
+<h3 class="mt-3 text-[1.25rem] font-medium leading-snug tracking-tight text-text-primary">IT Support &amp; Network Engineering Internship</h3>
+<p class="mt-2 text-sm font-medium text-text-secondary">PT Rei Global Servisindo</p>
+<p class="mt-2 text-xs leading-6 text-muted group-hover:text-text-secondary">Completed 6 months of hands-on hardware servicing, Acer laptop diagnostics, storage upgrades, and network support.</p>
+</div>
+<div class="mt-auto pt-6">
+<div class="h-px bg-gradient-to-r from-stroke via-stroke/60 to-transparent"></div>
+<div class="mt-4 flex items-center justify-between gap-3">
+<span class="font-mono text-xs text-muted">Nov 2024</span>
+<span class="inline-flex items-center gap-1.5 rounded-full border border-stroke bg-surface-elevated px-3.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-text-secondary group-hover:border-sky-300/45 group-hover:text-sky-200">View credential ↗</span>
+</div>
+</div>
+</button>
+</div>
+</div>
+</section>
+<section id="journal" class="relative overflow-clip bg-bg pb-24 pt-4 md:pb-32 md:pt-8">
+<div aria-hidden="true" class="pointer-events-none absolute -left-52 top-[15%] h-[34rem] w-[34rem] rounded-full bg-sky-500/[0.06] blur-[150px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-52 bottom-[5%] h-[36rem] w-[36rem] rounded-full bg-bronze-400/[0.06] blur-[160px]"></div>
+<div class="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+<div class="mb-10 md:mb-12">
+<div class="mb-6 flex items-center gap-3">
+<span class="h-px w-8 bg-stroke"></span>
+<span class="text-xs uppercase tracking-[0.3em] text-muted" data-i18n="pub_label">Documentation, Books &amp; Insights</span>
+<span class="h-px flex-1 bg-gradient-to-r from-bronze-400/70 to-transparent"></span>
+</div>
+<div class="grid gap-8 md:grid-cols-12 md:items-end">
+<div class="md:col-span-8">
+<h2 class="text-5xl leading-[0.95] tracking-[-0.045em] text-text-primary sm:text-6xl md:text-7xl" data-i18n="pub_heading_html">
+Thinking made<br><span class="font-display italic text-bronze-300">verifiable.</span>
+</h2>
+<p class="mt-6 max-w-xl text-sm leading-7 text-text-secondary md:text-base" data-i18n="pub_subtitle">
+A curated archive of my technical book authorship, UX research reports, network simulation logs, and web security studies—recording every step so others can learn alongside me.
+</p>
+</div>
+<div class="md:col-span-4 md:flex md:justify-end">
+<a href="https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2" target="_blank" rel="noreferrer" class="group relative inline-flex rounded-full px-5 py-3 text-sm transition duration-300 hover:-translate-y-1">
+<span class="absolute inset-0 rounded-full bg-gradient-to-r from-bronze-500 via-bronze-400 to-sky-500 shadow-[0_0_20px_rgba(200,159,116,0.4)]"></span>
+<span class="relative z-10 flex items-center gap-2 font-medium text-slate-950">
+<span data-i18n="pub_view_drive">Open Drive Archive</span>
+<span aria-hidden="true">↗</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="grid gap-4 md:grid-cols-2">
+<a href="https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-bronze-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-bronze-300">📘</span>
+<div>
+<span class="font-display text-base italic text-bronze-300">01</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">Technical Book Manuscript</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-bronze-300/50 group-hover:bg-bronze-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">OpenWrt Virtual Lab: Practical Router &amp; Network Simulation Guide</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+A step-by-step technical book processed for publication through InTech Press (Aug 2026), guiding readers through building virtualized OpenWrt router labs in GNS3 and VirtualBox.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">InTech Press</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">ISBN Track • 2026</span>
+</div>
+</a>
+<a href="https://drive.google.com/file/d/1H9ARSDHYkoYQODFnVPWQIg3vhAwWS4DT/view?usp=drivesdk" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-sky-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-sky-300">📊</span>
+<div>
+<span class="font-display text-base italic text-sky-300">02</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">User Research &amp; Needs Analysis</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-sky-300/50 group-hover:bg-sky-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">Laporan Riset &amp; Analisis Kebutuhan Pengguna: LabLink Pemrograman Front-End</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+Mixed-methods UX study (19 student surveys &amp; 4 in-depth interviews at ITTS) synthesizing the &quot;Raka&quot; persona, affinity maps, and mobile-first online lab booking requirements.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">PDF Research Report</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Oct 2026</span>
+</div>
+</a>
+<a href="https://docs.google.com/document/d/1r7Yfdym6aYm5m4rloYagJdkOge46446jCaBzZluVWaA/edit" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-bronze-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-bronze-300">🖧</span>
+<div>
+<span class="font-display text-base italic text-bronze-300">03</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">Network Architecture Study</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-bronze-300/50 group-hover:bg-bronze-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">Implementasi Load Balancing PCC dan Failover Multi-ISP pada Router MikroTik</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+Research specification evaluating dual-ISP traffic distribution, throughput gains, packet loss, latency, and automated failover switchover times in virtualized RouterOS environments.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Google Docs</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Oct 2026</span>
+</div>
+</a>
+<a href="https://docs.google.com/document/d/1bvbQV7mMvw-X--vv5Nr-9wuIh8kxgtImScVjB10VmYM/edit" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-sky-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-sky-300">📡</span>
+<div>
+<span class="font-display text-base italic text-sky-300">04</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">Infrastructure Lab Report</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-sky-300/50 group-hover:bg-sky-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">Konsep Dasar Network Monitoring dalam Pengelolaan Infrastruktur TI</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+Practical network monitoring analysis using Cisco Packet Tracer across dual DHCP segments (`192.168.10.x` &amp; `20.x`), isolating physical link downtime via `ping` and `tracert` hop inspection.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Google Docs</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Oct 2026</span>
+</div>
+</a>
+<a href="https://docs.google.com/document/d/1MP57bTyrZACf1zldYWw1y2GV4dGi_Ksj90MivQrJD4w/edit" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-bronze-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-bronze-300">🛡️</span>
+<div>
+<span class="font-display text-base italic text-bronze-300">05</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">Application Security Analysis</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-bronze-300/50 group-hover:bg-bronze-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">Keamanan Aplikasi Web: Origin Isolation &amp; Client-Side Trust Boundaries</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+Hands-on security audit proving why browser UI/DOM and `localStorage` cannot serve as security boundaries, demonstrating `curl` request crafting and Same-Origin Policy enforcement.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Google Docs</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Oct 2026</span>
+</div>
+</a>
+<a href="https://drive.google.com/open?id=1NagqnFeRXKQlkU3bl8tm6KFEa3DN0q6X" target="_blank" rel="noreferrer" class="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.45rem] border border-stroke bg-surface p-6 transition-all duration-500 hover:border-sky-400/45 shadow-[0_16px_45px_rgba(0,0,0,0.3)]">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl border border-stroke bg-surface-elevated text-sky-300">🔧</span>
+<div>
+<span class="font-display text-base italic text-sky-300">06</span>
+<p class="mt-0.5 text-[9px] uppercase tracking-[0.16em] text-muted">Industrial Internship Thesis</p>
+</div>
+</div>
+<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-muted transition group-hover:border-sky-300/50 group-hover:bg-sky-400 group-hover:text-slate-950">↗</span>
+</div>
+<h3 class="mt-4 text-lg font-medium leading-snug tracking-tight text-text-primary md:text-xl">Laporan Praktik Kerja Lapangan (PKL): PT Rei Global Servisindo</h3>
+<p class="mt-2.5 text-xs leading-5 text-muted group-hover:text-text-secondary">
+Comprehensive technical report detailing 6 months of hardware diagnostics, Acer laptop servicing, optical-to-SSD caddy installation procedures, and IT customer service workflows.
+</p>
+<div class="mt-auto flex flex-wrap items-center gap-2 border-t border-stroke pt-4">
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">PDF Report</span>
+<span class="rounded-full border border-stroke bg-surface-elevated px-2.5 py-1 text-[9px] text-muted">Dec 2024</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-bg py-16 md:py-24">
+<div class="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 px-6 md:grid-cols-3 md:px-10 lg:px-16">
+<div class="border-t border-stroke pt-6">
+<div class="font-display text-6xl italic tracking-tight text-text-primary md:text-7xl">3+</div>
+<div class="mt-2 text-xs uppercase tracking-[0.3em] text-muted" data-i18n="stat1_label">Years Hands-On Lab &amp; Field Practice</div>
+</div>
+<div class="border-t border-stroke pt-6">
+<div class="font-display text-6xl italic tracking-tight text-bronze-300 md:text-7xl">15+</div>
+<div class="mt-2 text-xs uppercase tracking-[0.3em] text-muted" data-i18n="stat2_label">Network, AI &amp; Web Systems Built</div>
+</div>
+<div class="border-t border-stroke pt-6">
+<div class="font-display text-6xl italic tracking-tight text-sky-300 md:text-7xl">924</div>
+<div class="mt-2 text-xs uppercase tracking-[0.3em] text-muted" data-i18n="stat3_label">TOEIC English Score (Out of 995)</div>
+</div>
+</div>
+</section>
+<section id="contact" class="relative overflow-hidden bg-[#05070b] pb-10 pt-16 text-white md:pb-14 md:pt-20">
+<div class="absolute inset-0 overflow-hidden">
+<div aria-hidden="true" class="pointer-events-none absolute -left-40 top-1/3 h-[28rem] w-[28rem] rounded-full bg-bronze-500/12 blur-[140px]"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-40 bottom-0 h-[30rem] w-[30rem] rounded-full bg-sky-500/12 blur-[150px]"></div>
+</div>
+<div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16">
+<div class="overflow-hidden border-y border-white/10 py-6 md:py-10">
+<div class="animate-marquee whitespace-nowrap">
+<span class="pr-10 font-display text-5xl italic text-white/85 md:text-7xl lg:text-8xl">ENGINEERING WITH CALM PRECISION • </span>
+<span class="pr-10 font-display text-5xl italic text-bronze-200/85 md:text-7xl lg:text-8xl">ERALSADEWA • </span>
+<span class="pr-10 font-display text-5xl italic text-white/85 md:text-7xl lg:text-8xl">BUILDING RELIABLE SYSTEMS • </span>
+<span class="pr-10 font-display text-5xl italic text-sky-200/85 md:text-7xl lg:text-8xl">ENGINEERING WITH CALM PRECISION • </span>
+<span class="pr-10 font-display text-5xl italic text-bronze-200/85 md:text-7xl lg:text-8xl">ERALSADEWA • </span>
+<span class="pr-10 font-display text-5xl italic text-white/85 md:text-7xl lg:text-8xl">BUILDING RELIABLE SYSTEMS • </span>
+</div>
+</div>
+<div class="flex flex-col items-center py-12 text-center md:py-16">
+<p class="text-xs uppercase tracking-[0.3em] text-slate-400" data-i18n="contact_label">Get in touch</p>
+<h2 class="mt-5 max-w-3xl font-display text-4xl italic text-white md:text-6xl" data-i18n="contact_heading">
+Let’s build something dependable and worth remembering.
+</h2>
+<p class="mt-5 max-w-xl text-sm leading-7 text-slate-300/75 md:text-base" data-i18n="contact_subtitle">
+Whether you need a network technician, a collaborator for an AI or cybersecurity lab, or a thoughtful front-end builder, feel free to reach out anytime.
+</p>
+<div class="mt-10 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<a href="https://wa.me/6287730485477?text=Halo%20Eral%2C%20saya%20melihat%20portfolio%20Anda%20dan%20ingin%20berdiskusi%20mengenai%20kolaborasi%20proyek." target="_blank" rel="noreferrer" class="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.04] p-5 text-left backdrop-blur-md transition duration-300 hover:-translate-y-1.5 hover:border-bronze-300/50">
+<span class="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-bronze-400/15 blur-3xl transition duration-500 group-hover:scale-150"></span>
+<div class="relative">
+<div class="flex items-start justify-between gap-4">
+<span class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-bronze-200 transition duration-300 group-hover:bg-bronze-300 group-hover:text-slate-950">💬</span>
+<span class="text-white/40 transition group-hover:text-bronze-200">↗</span>
+</div>
+<h3 class="mt-7 text-base font-medium text-white">WhatsApp</h3>
+<p class="mt-1 font-mono text-xs text-slate-300/70">+62 877-3048-5477</p>
+</div>
+</a>
+<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=eralsadewa85@gmail.com&amp;su=Project%20or%20Network%20Collaboration&amp;body=Halo%20Eral%20Shabya%20Dewantara%2C%0A%0ASaya%20tertarik%20untuk%20berdiskusi%20mengenai%20proyek%20atau%20kolaborasi." target="_blank" rel="noreferrer" class="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.04] p-5 text-left backdrop-blur-md transition duration-300 hover:-translate-y-1.5 hover:border-sky-300/50">
+<span class="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-sky-400/15 blur-3xl transition duration-500 group-hover:scale-150"></span>
+<div class="relative">
+<div class="flex items-start justify-between gap-4">
+<span class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-sky-200 transition duration-300 group-hover:bg-sky-300 group-hover:text-slate-950">✉️</span>
+<span class="text-white/40 transition group-hover:text-sky-200">↗</span>
+</div>
+<h3 class="mt-7 text-base font-medium text-white">Email</h3>
+<p class="mt-1 font-mono text-xs text-slate-300/70">eralsadewa85@gmail.com</p>
+</div>
+</a>
+<a href="https://www.linkedin.com/in/eralsadewa/" target="_blank" rel="noreferrer" class="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.04] p-5 text-left backdrop-blur-md transition duration-300 hover:-translate-y-1.5 hover:border-bronze-300/50">
+<span class="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-bronze-400/15 blur-3xl transition duration-500 group-hover:scale-150"></span>
+<div class="relative">
+<div class="flex items-start justify-between gap-4">
+<span class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-bronze-200 transition duration-300 group-hover:bg-bronze-300 group-hover:text-slate-950">in</span>
+<span class="text-white/40 transition group-hover:text-bronze-200">↗</span>
+</div>
+<h3 class="mt-7 text-base font-medium text-white">LinkedIn</h3>
+<p class="mt-1 font-mono text-xs text-slate-300/70">in/eralsadewa</p>
+</div>
+</a>
+<button type="button" id="copy-email-card-btn" class="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.04] p-5 text-left backdrop-blur-md transition duration-300 hover:-translate-y-1.5 hover:border-sky-300/50">
+<span class="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-sky-400/15 blur-3xl transition duration-500 group-hover:scale-150"></span>
+<div class="relative">
+<div class="flex items-start justify-between gap-4">
+<span class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-sky-200 transition duration-300 group-hover:bg-sky-300 group-hover:text-slate-950">📋</span>
+<span class="text-xs font-mono text-sky-300" id="copy-card-status">Copy</span>
+</div>
+<h3 class="mt-7 text-base font-medium text-white">Copy Direct Contact</h3>
+<p class="mt-1 text-xs text-slate-300/70">One-click copy email &amp; phone</p>
+</div>
+</button>
+</div>
+</div>
+<div class="mt-6 flex flex-col items-center justify-between gap-6 border-t border-white/15 pt-8 text-sm md:flex-row">
+<div class="flex items-center gap-2.5 text-slate-300/80">
+<span class="relative flex h-2.5 w-2.5">
+<span class="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+</span>
+<span data-i18n="footer_available">Available for network engineering, IT support &amp; web/AI collaborations</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-5 text-xs">
+<a href="https://wa.me/6287730485477" target="_blank" rel="noreferrer" class="text-slate-400 transition-colors hover:text-bronze-200">WhatsApp</a>
+<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=eralsadewa85@gmail.com" target="_blank" rel="noreferrer" class="text-slate-400 transition-colors hover:text-bronze-200">Email</a>
+<a href="https://www.linkedin.com/in/eralsadewa/" target="_blank" rel="noreferrer" class="text-slate-400 transition-colors hover:text-bronze-200">LinkedIn</a>
+<a href="https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS" target="_blank" rel="noreferrer" class="text-slate-400 transition-colors hover:text-bronze-200">Official CV (Drive)</a>
+</div>
+<div class="text-xs text-slate-400">© 2026 Eral Shabya Dewantara (Eralsadewa)</div>
+</div>
+</div>
+</section>
+</main>
+<div id="detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-4 backdrop-blur-md transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="relative max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] border border-stroke bg-surface p-6 text-text-primary shadow-2xl md:p-8">
+<div class="flex items-start justify-between gap-4 border-b border-stroke pb-4">
+<div>
+<span id="modal-badge" class="inline-flex rounded-full border border-bronze-400/35 bg-bronze-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-bronze-300">Case Study</span>
+<h3 id="modal-title" class="mt-2 text-2xl font-medium tracking-tight text-text-primary md:text-3xl">Project Title</h3>
+<p id="modal-subtitle" class="mt-1 text-xs text-muted">Subtitle</p>
+</div>
+<button type="button" id="close-modal-btn" aria-label="Close modal" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-stroke bg-surface-elevated text-text-primary transition hover:border-bronze-400/50">✕</button>
+</div>
+<div id="modal-body" class="mt-6 space-y-5 text-sm leading-7 text-text-secondary"></div>
+<div class="mt-7 flex flex-wrap items-center justify-between gap-3 border-t border-stroke pt-5">
+<div id="modal-tags" class="flex flex-wrap gap-2"></div>
+<a id="modal-external-link" href="#work" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-bronze-400 to-sky-400 px-5 py-2.5 text-xs font-medium text-slate-950 transition hover:opacity-95">
+<span id="modal-link-text">Open Source Doc</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+</div>
+<div id="toast-banner" class="pointer-events-none fixed bottom-6 right-6 z-[110] translate-y-12 rounded-full border border-bronze-300/40 bg-surface-elevated px-5 py-3 text-xs font-medium text-text-primary opacity-0 shadow-2xl transition-all duration-300">
+Copied to clipboard!
+</div>
+</div>
+<script>
+(function () {
+const canvas = document.getElementById('hero-wave-canvas');
+if (canvas) {
+const ctx = canvas.getContext('2d');
+let width = 0;
+let height = 0;
+let tick = 0;
+function resizeCanvas() {
+width = canvas.width = window.innerWidth;
+height = canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+function drawWaves() {
+ctx.clearRect(0, 0, width, height);
+const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+bgGrad.addColorStop(0, '#05080f');
+bgGrad.addColorStop(0.5, '#0b1322');
+bgGrad.addColorStop(1, '#070a10');
+ctx.fillStyle = bgGrad;
+ctx.fillRect(0, 0, width, height);
+const waves = [
+{ amp: 48, len: 0.0022, speed: 0.012, yOffset: 0.42, color1: 'rgba(200, 159, 116, 0.16)', color2: 'rgba(56, 189, 248, 0.04)' },
+{ amp: 62, len: 0.0017, speed: -0.009, yOffset: 0.52, color1: 'rgba(56, 189, 248, 0.14)', color2: 'rgba(15, 23, 42, 0.05)' },
+{ amp: 38, len: 0.0028, speed: 0.015, yOffset: 0.62, color1: 'rgba(221, 184, 146, 0.12)', color2: 'rgba(2, 132, 199, 0.05)' }
+];
+waves.forEach((w, idx) => {
+ctx.beginPath();
+ctx.moveTo(0, height);
+for (let x = 0; x <= width; x += 16) {
+const y = height * w.yOffset
++ Math.sin(x * w.len + tick * w.speed + idx) * w.amp
++ Math.cos(x * w.len * 0.6 - tick * w.speed * 0.8) * (w.amp * 0.5);
+ctx.lineTo(x, y);
+}
+ctx.lineTo(width, height);
+ctx.closePath();
+const grad = ctx.createLinearGradient(0, height * 0.25, width, height);
+grad.addColorStop(0, w.color1);
+grad.addColorStop(1, w.color2);
+ctx.fillStyle = grad;
+ctx.fill();
+});
+tick += 1;
+requestAnimationFrame(drawWaves);
+}
+requestAnimationFrame(drawWaves);
+}
+const rolesData = {
+en: ['Network Engineer', 'System Administrator', 'AI & Security Builder', 'Front-End Developer'],
+id: ['Network Engineer', 'System Administrator', 'Pengembang AI & Keamanan', 'Front-End Developer']
+};
+let currentLang = 'en';
+let roleIdx = 0;
+const roleEl = document.getElementById('cycling-role-text');
+setInterval(() => {
+if (!roleEl) return;
+roleEl.style.opacity = '0';
+roleEl.style.transform = 'translateY(8px)';
+setTimeout(() => {
+const list = rolesData[currentLang] || rolesData.en;
+roleIdx = (roleIdx + 1) % list.length;
+roleEl.textContent = list[roleIdx];
+roleEl.style.opacity = '1';
+roleEl.style.transform = 'translateY(0)';
+}, 320);
+}, 3000);
+const i18n = {
+en: {
+nav_home: 'Home',
+nav_about: 'About',
+nav_education: 'Education',
+nav_experience: 'Experience',
+nav_projects: 'Projects',
+nav_certificate: 'Certificate',
+nav_publisher: 'Publisher',
+nav_contact: 'Contact',
+nav_cv: 'Download CV',
+hero_badge: 'portfolio ’26 • @eralsadewa',
+hero_role_prefix: 'A calm, detail-driven',
+hero_role_suffix: 'architecting dependable digital infrastructure & interfaces.',
+hero_desc: 'I combine network engineering, Linux system administration, cybersecurity, and human-centered web development to build systems that work quietly, securely, and reliably.',
+hero_cta_works: 'Explore Works',
+hero_cta_contact: 'Reach Out Gently',
+scroll_label: 'Scroll',
+about_label: 'About Me',
+about_heading_html: 'Engineering with <span class="font-display italic text-bronze-300">precision,</span><br>leading with <span class="font-display italic text-sky-300">calmness.</span>',
+about_motto_quote: '“We don’t need to be extraordinary to begin; we simply need to genuinely enjoy the craft of what we are building.”',
+about_motto_caption: 'Personal Philosophy • Eral Shabya Dewantara',
+about_pill: 'A little about me',
+about_intro: 'I’m Eral—also known as Eralsadewa—an Information Technology student at Institut Teknologi Tangerang Selatan (ITTS) bridging network infrastructure, cybersecurity, and thoughtful web interfaces.',
+about_body: 'From configuring MikroTik load balancers and OpenWrt virtual labs to researching mobile-first campus applications and local AI workspaces with Ollama, I approach every technical challenge with patience, structured clarity, and respect for the people using the system.',
+pillar1_title: 'Network & Infrastructure',
+pillar1_desc: 'Designing resilient LAN/WAN architectures, MikroTik PCC load balancing, Cisco routing, and OpenWrt/GNS3 virtual labs.',
+pillar2_title: 'Cyber Security & SysAdmin',
+pillar2_desc: 'Administering Linux/Windows servers, analyzing SIEM telemetry with Wazuh, and hardening web application security boundaries.',
+pillar3_title: 'Web UX & Local AI Workspaces',
+pillar3_desc: 'Translating empirical user research into mobile-first web apps and local Large Language Model interfaces powered by Ollama.',
+edu_label: 'Education',
+edu_heading_html: 'Foundations that shaped<br>my <span class="font-display italic text-bronze-300">discipline.</span>',
+edu_subtitle: 'Academic rigor in Information Technology and Computer & Network Engineering, paired with hands-on leadership in campus labs and technical bootcamps.',
+edu_higher_badge: 'Higher Education • Undergraduate',
+edu_itts_degree: 'Bachelor’s Degree (S1) — Information Technology (NIM: 1002250043)',
+edu_coursework_label: 'Relevant Coursework & Focus',
+edu_vocational_badge: 'Vocational Engineering Education',
+edu_smk_major: 'Computer and Network Engineering (Teknik Komputer dan Jaringan / TKJ)',
+edu_sub_label: 'Selected leadership & learning experiences',
+edu_sub_heading: 'Academic & Community Initiatives',
+exp_label: 'Professional Experience',
+exp_heading_html: 'Where discipline became<br><span class="font-display italic text-bronze-300">real reliability.</span>',
+exp_subtitle: 'Field roles and technical leadership where I combined network engineering, hardware diagnostics, cybersecurity education, and clear communication.',
+exp_journey_label: 'My journey',
+exp_journey_title: 'Troubleshooting, building, and mentoring with steady hands.',
+exp_journey_desc: 'Whether crimping RJ45 cables on-site, diagnosing enterprise routers, or teaching CLI fundamentals to high school students, every role taught me that great engineering starts with patience and clarity.',
+work_label: 'Selected Projects',
+work_heading_html: 'Systems engineered into<br><span class="font-display italic text-bronze-300">dependable work.</span>',
+work_subtitle: 'A curated collection of network architectures, local AI interfaces, IoT telemetry, cybersecurity labs, and mobile-first UX research projects.',
+exp_gallery_label: 'System Architect & Builder',
+exp_gallery_desc: 'A curated look inside my network topologies, Packet Tracer downtime simulations, mobile UI wireframes, and local AI security pipelines. Click any card to inspect the technical blueprint.',
+cert_label: 'Certificates & Credentials',
+cert_heading_html: 'Credentials that<br>validate the <span class="font-display italic text-bronze-300">craft.</span>',
+cert_subtitle: 'National and international certifications, language proficiency scores, and industry credentials across networking, cybersecurity, and communication.',
+pub_label: 'Documentation, Books & Insights',
+pub_heading_html: 'Thinking made<br><span class="font-display italic text-bronze-300">verifiable.</span>',
+pub_subtitle: 'A curated archive of my technical book authorship, UX research reports, network simulation logs, and web security studies—recording every step so others can learn alongside me.',
+pub_view_drive: 'Open Drive Archive',
+stat1_label: 'Years Hands-On Lab & Field Practice',
+stat2_label: 'Network, AI & Web Systems Built',
+stat3_label: 'TOEIC English Score (Out of 995)',
+contact_label: 'Get in touch',
+contact_heading: 'Let’s build something dependable and worth remembering.',
+contact_subtitle: 'Whether you need a network technician, a collaborator for an AI or cybersecurity lab, or a thoughtful front-end builder, feel free to reach out anytime.',
+footer_available: 'Available for network engineering, IT support & web/AI collaborations'
+},
+id: {
+nav_home: 'Beranda',
+nav_about: 'Tentang',
+nav_education: 'Pendidikan',
+nav_experience: 'Pengalaman',
+nav_projects: 'Proyek',
+nav_certificate: 'Sertifikat',
+nav_publisher: 'Publikasi',
+nav_contact: 'Kontak',
+nav_cv: 'Unduh CV',
+hero_badge: 'portofolio ’26 • @eralsadewa',
+hero_role_prefix: 'Seorang',
+hero_role_suffix: 'yang merancang infrastruktur jaringan & antarmuka digital dengan tenang dan presisi.',
+hero_desc: 'Saya memadukan rekayasa jaringan komputer, administrasi sistem Linux, keamanan siber, dan pengembangan web berpusat pada pengguna untuk membangun solusi yang andal.',
+hero_cta_works: 'Lihat Karya',
+hero_cta_contact: 'Hubungi Saya',
+scroll_label: 'Gulir',
+about_label: 'Tentang Saya',
+about_heading_html: 'Merancang dengan <span class="font-display italic text-bronze-300">ketelitian,</span><br>memimpin dengan <span class="font-display italic text-sky-300">ketenangan.</span>',
+about_motto_quote: '“Kita tidak perlu hebat dalam melakukan sesuatu untuk memulai; kita hanya perlu menikmati setiap proses dalam mengerjakannya.”',
+about_motto_caption: 'Moto Hidup • Eral Shabya Dewantara',
+about_pill: 'Sekilas tentang saya',
+about_intro: 'Saya Eral—dikenal juga sebagai Eralsadewa—mahasiswa Teknologi Informasi di Institut Teknologi Tangerang Selatan (ITTS) yang mendalami jaringan, keamanan siber, dan pengembangan web.',
+about_body: 'Mulai dari konfigurasi Load Balancing MikroTik dan lab virtual OpenWrt hingga riset UX aplikasi kampus LabLink serta eksperimen AI lokal dengan Ollama, saya selalu mengedepankan ketenangan, struktur yang rapi, dan empati bagi pengguna.',
+pillar1_title: 'Jaringan & Infrastruktur',
+pillar1_desc: 'Merancang topologi LAN/WAN, Load Balancing PCC MikroTik, routing Cisco, serta simulasi jaringan virtual di GNS3 dan OpenWrt.',
+pillar2_title: 'Keamanan Siber & SysAdmin',
+pillar2_desc: 'Mengelola server Linux/Windows, memantau insiden keamanan dengan SIEM Wazuh, dan menguji batas keamanan aplikasi web.',
+pillar3_title: 'Riset UX & AI Lokal (Ollama)',
+pillar3_desc: 'Menerjemahkan riset kebutuhan pengguna menjadi antarmuka web mobile-first serta ruang kerja Large Language Model lokal.',
+edu_label: 'Pendidikan',
+edu_heading_html: 'Fondasi yang membentuk<br><span class="font-display italic text-bronze-300">disiplin saya.</span>',
+edu_subtitle: 'Perpaduan pendidikan akademik di bidang Teknologi Informasi dan Teknik Komputer & Jaringan dengan kepemimpinan aktif di komunitas teknologi.',
+edu_higher_badge: 'Pendidikan Tinggi • Sarjana (S1)',
+edu_itts_degree: 'S1 Teknologi Informasi (NIM: 1002250043)',
+edu_coursework_label: 'Mata Kuliah & Fokus Utama',
+edu_vocational_badge: 'Pendidikan Kejuruan Menengah',
+edu_smk_major: 'Teknik Komputer dan Jaringan (TKJ)',
+edu_sub_label: 'Pengalaman kepemimpinan & akademik pilihan',
+edu_sub_heading: 'Inisiatif Akademik & Komunitas',
+exp_label: 'Pengalaman Profesional',
+exp_heading_html: 'Tempat gagasan menjadi<br><span class="font-display italic text-bronze-300">karya nyata.</span>',
+exp_subtitle: 'Peran lapangan dan kepemimpinan teknis tempat saya memadukan troubleshooting jaringan, perawatan perangkat keras, dan edukasi keamanan siber.',
+exp_journey_label: 'Perjalanan Saya',
+exp_journey_title: 'Membangun, memperbaiki, dan berbagi ilmu di setiap peran.',
+exp_journey_desc: 'Baik saat menangani instalasi jaringan klien, merakit dan meng-upgrade perangkat laptop, maupun membimbing siswa SMK di bootcamp Linux CLI, ketenangan dan ketelitian selalu menjadi kunci.',
+work_label: 'Proyek Pilihan',
+work_heading_html: 'Solusi teknis yang dirancang<br><span class="font-display italic text-bronze-300">penuh makna.</span>',
+work_subtitle: 'Kumpulan proyek rekayasa jaringan, antarmuka AI lokal, pemantauan IoT kebencanaan, laboratorium keamanan siber, dan riset UX.',
+exp_gallery_label: 'Eksplorasi Arsitektur & Lab',
+exp_gallery_desc: 'Cuplikan topologi jaringan Packet Tracer, wireframe mobile-first LabLink, laboratorium OpenWrt, serta integrasi SIEM Wazuh & Ollama. Klik kartu untuk melihat detail.',
+cert_label: 'Sertifikasi & Kredensial',
+cert_heading_html: 'Kredensial yang menguji<br><span class="font-display italic text-bronze-300">kompetensi.</span>',
+cert_subtitle: 'Sertifikasi kompetensi jaringan, skor bahasa internasional TOEIC 924/995, UKBI, serta penghargaan kompetisi dan kemitraan.',
+pub_label: 'Dokumentasi, Buku & Riset',
+pub_heading_html: 'Pemikiran yang dicatat<br><span class="font-display italic text-bronze-300">secara terbuka.</span>',
+pub_subtitle: 'Arsip buku teknis OpenWrt, laporan riset UX LabLink, proposal optimasi jaringan MikroTik, dan laporan praktikum keamanan aplikasi web.',
+pub_view_drive: 'Buka Arsip Google Drive',
+stat1_label: 'Tahun Praktik Lab & Jaringan',
+stat2_label: 'Proyek Jaringan, AI & Web',
+stat3_label: 'Skor Bahasa Inggris TOEIC (Dari 995)',
+contact_label: 'Mari Terhubung',
+contact_heading: 'Mari membangun sistem yang andal dan berkesan bersama.',
+contact_subtitle: 'Terbuka untuk kolaborasi proyek infrastruktur jaringan, dukungan teknis TI, riset AI/keamanan siber, maupun pengembangan web.',
+footer_available: 'Tersedia untuk proyek jaringan, dukungan TI & kolaborasi web/AI'
+}
+};
+function setLanguage(lang) {
+currentLang = lang;
+const dict = i18n[lang] || i18n.en;
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const key = el.getAttribute('data-i18n');
+if (!dict[key]) return;
+if (key.endsWith('_html')) {
+el.innerHTML = dict[key];
+} else {
+el.textContent = dict[key];
+}
+});
+const enBtn = document.getElementById('lang-en-btn');
+const idBtn = document.getElementById('lang-id-btn');
+if (enBtn && idBtn) {
+if (lang === 'en') {
+enBtn.setAttribute('aria-pressed', 'true');
+enBtn.className = 'rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition bg-text-primary text-bg';
+idBtn.setAttribute('aria-pressed', 'false');
+idBtn.className = 'rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition text-muted hover:text-text-primary';
+} else {
+idBtn.setAttribute('aria-pressed', 'true');
+idBtn.className = 'rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition bg-text-primary text-bg';
+enBtn.setAttribute('aria-pressed', 'false');
+enBtn.className = 'rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] transition text-muted hover:text-text-primary';
+}
+}
+}
+document.getElementById('lang-en-btn')?.addEventListener('click', () => setLanguage('en'));
+document.getElementById('lang-id-btn')?.addEventListener('click', () => setLanguage('id'));
+const htmlEl = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle-btn');
+const iconSun = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+themeBtn?.addEventListener('click', () => {
+const isDark = htmlEl.classList.contains('dark');
+if (isDark) {
+htmlEl.classList.remove('dark');
+htmlEl.classList.add('light');
+htmlEl.style.colorScheme = 'light';
+iconSun?.classList.add('hidden');
+iconMoon?.classList.remove('hidden');
+} else {
+htmlEl.classList.remove('light');
+htmlEl.classList.add('dark');
+htmlEl.style.colorScheme = 'dark';
+iconMoon?.classList.add('hidden');
+iconSun?.classList.remove('hidden');
+}
+});
+const filterBtns = document.querySelectorAll('.proj-filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+const countLabel = document.getElementById('project-count-label');
+filterBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+const filter = btn.getAttribute('data-filter');
+filterBtns.forEach(b => {
+b.className = 'proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-muted hover:text-text-primary';
+});
+btn.className = 'proj-filter-btn relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:text-sm text-slate-950 bg-gradient-to-r from-bronze-300 via-bronze-200 to-sky-200 shadow-[0_0_18px_rgba(200,159,116,0.35)]';
+let shown = 0;
+projectCards.forEach(card => {
+const cat = card.getAttribute('data-category');
+if (filter === 'all' || cat === filter) {
+card.classList.remove('hidden');
+shown += 1;
+} else {
+card.classList.add('hidden');
+}
+});
+if (countLabel) {
+countLabel.textContent = `${shown} project${shown === 1 ? '' : 's'} displayed`;
+}
+});
+});
+const modalDetails = {
+'ollama': {
+badge: 'AI & Local LLM Engineering',
+title: 'AI Launcher Web (Ollama)',
+subtitle: 'Self-Hosted LLM Workspace • Prompt Engineering & Model Evaluation',
+body: `
+<p><strong>Overview:</strong> Built a lightweight, privacy-first web interface to run, manage, and test local Large Language Models powered by <strong>Ollama</strong> without relying on external cloud APIs.</p>
+<p><strong>Key Capabilities:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Dynamic model selector supporting local weights (Llama, Qwen, Mistral, DeepSeek) running on local hardware.</li>
+<li>Structured prompt engineering workspace with system-prompt presets and response streaming.</li>
+<li>Integrated with local cybersecurity log evaluation workflows for offline SOC anomaly analysis.</li>
+</ul>
+`,
+tags: ['Ollama', 'Local LLM', 'Prompt Engineering', 'JavaScript', 'REST API'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'View in Official CV'
+},
+'lablink': {
+badge: 'Mobile-First UX Case Study',
+title: 'LabLink — ITTS Laboratory Booking Platform',
+subtitle: 'Front-End Programming Course • Lecturer: Muhamad Yusuf, S.Kom., M.Kom.',
+body: `
+<p><strong>Problem Statement:</strong> In a quantitative survey of 19 active ITTS students and 4 qualitative interviews, verbal laboratory borrowing scored a median difficulty of <strong>4/5 ("Difficult")</strong>, with <strong>84.2%</strong> forced to walk around campus searching for teaching assistants (asdos) for verbal approval.</p>
+<p><strong>Key Research Findings:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li><strong>84.2%</strong> wasted lab time hunting for verbal approval (ACC).</li>
+<li><strong>78.9%</strong> lacked written receipts, risking disputes when returning ESP32 or Raspberry Pi kits.</li>
+<li><strong>68.4%</strong> experienced "gacha" equipment conditions (missing adapters or unlabeled faulty units).</li>
+<li><strong>73.7%</strong> access campus tools primarily via Android smartphones, driving a strict <strong>mobile-first web design</strong>.</li>
+</ul>
+<p><strong>Solution Designed:</strong> Real-time online equipment catalog with physical asset ID tags, 100%-requested remote online approval (ACC), and verifiable digital return receipts.</p>
+`,
+tags: ['UX Research', 'Persona Synthesis', 'Mobile-First Web', 'ITTS'],
+link: 'https://drive.google.com/file/d/1H9ARSDHYkoYQODFnVPWQIg3vhAwWS4DT/view?usp=drivesdk',
+linkText: 'Read Full Research PDF'
+},
+'bpbd-iot': {
+badge: 'Civic IoT & Disaster Response',
+title: 'BPBD Banten IoT Evacuation Post Monitoring',
+subtitle: 'Proof-of-Concept Collaboration • July 2026',
+body: `
+<p><strong>Overview:</strong> Developed a proof-of-concept IoT telemetry and monitoring system in collaboration with <strong>BPBD Provinsi Banten</strong> to improve situational awareness across regional disaster evacuation posts.</p>
+<p><strong>Key Highlights:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Designed sensor telemetry nodes to report environmental conditions and post occupancy status in real time.</li>
+<li>Structured a clean web monitoring interface for rapid assessment by emergency coordination teams.</li>
+</ul>
+`,
+tags: ['IoT Telemetry', 'BPBD Banten', 'Disaster Management', 'System Architecture'],
+link: 'https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2',
+linkText: 'Open Project Archive'
+},
+'mikrotik-pcc': {
+badge: 'Network Optimization Architecture',
+title: 'MikroTik Dual-ISP Load Balancing PCC & Failover',
+subtitle: 'Computer Networks Project • Institut Teknologi Tangerang Selatan',
+body: `
+<p><strong>Objective:</strong> Eliminate single-ISP bandwidth bottlenecks and downtime risks by combining two ISP links using <strong>Per Connection Classifier (PCC)</strong> and automated <strong>Failover</strong> on MikroTik RouterOS.</p>
+<p><strong>Testing &amp; Verification Scope:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Mangle rule packet classification to balance connections symmetrically across ISP A and ISP B.</li>
+<li>Automated route distance &amp; Netwatch failover testing when primary ISP link drops.</li>
+<li>Quantitative before-and-after benchmarking across 6 QoS metrics: <strong>Throughput, Latency (Ping), Packet Loss, Traffic Load Distribution, Failover Success Rate, and Switchover Recovery Time</strong>.</li>
+</ul>
+`,
+tags: ['MikroTik RouterOS', 'Load Balancing PCC', 'Multi-ISP Failover', 'QoS Benchmarking'],
+link: 'https://docs.google.com/document/d/1r7Yfdym6aYm5m4rloYagJdkOge46446jCaBzZluVWaA/edit',
+linkText: 'Read Full Proposal Doc'
+},
+'openwrt-lab': {
+badge: 'Technical Authorship & Virtualization',
+title: 'OpenWrt Virtual Lab & GNS3 Guidebook',
+subtitle: 'Published Practical Guide • InTech Press (August 2026)',
+body: `
+<p><strong>Overview:</strong> Authored a practical engineering book titled <em>"OpenWrt Virtual Lab"</em> processed through <strong>InTech Press</strong>, documenting how students and network engineers can build zero-hardware router labs on a single machine.</p>
+<p><strong>Core Chapters &amp; Labs:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Deploying OpenWrt x86/64 firmware inside Oracle VirtualBox and GNS3 network topologies.</li>
+<li>Configuring VLANs, firewall zones, DHCP/DNS, and LuCI web interfaces alongside SSH administration.</li>
+<li>Simulating multi-router enterprise routing and bandwidth management safely in virtual environments.</li>
+</ul>
+`,
+tags: ['OpenWrt', 'GNS3', 'VirtualBox', 'LuCI & SSH', 'InTech Press'],
+link: 'https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2',
+linkText: 'View Publication Archive'
+},
+'wazuh-soc': {
+badge: 'Security Operations & AI',
+title: 'Wazuh SIEM & AI-Assisted SOC Lab',
+subtitle: 'Threat Detection, Log Analysis & Local LLM Triage',
+body: `
+<p><strong>Overview:</strong> Built a simulated Security Operations Center (SOC) environment integrating the open-source <strong>Wazuh SIEM/XDR</strong> platform with locally hosted <strong>Ollama</strong> language models.</p>
+<p><strong>Technical Workflow:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Collected endpoint security telemetry, authentication logs, and file integrity alerts in Wazuh.</li>
+<li>Curated security incident datasets and used local LLM inference to summarize alert context and suggest remediation steps without exposing sensitive logs to external clouds.</li>
+</ul>
+`,
+tags: ['Wazuh SIEM', 'SOC Lab', 'Ollama LLM', 'Threat Intelligence'],
+link: 'https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2',
+linkText: 'View Lab Archive'
+},
+'websec-sop': {
+badge: 'Web Application Security',
+title: 'Same-Origin Policy & Client Trust Boundary Lab',
+subtitle: 'Web Application Security Practicum • October 2026',
+body: `
+<p><strong>Core Finding:</strong> Demonstrated empirically why browser UI controls and client-side storage (<code>localStorage</code>) must never be treated as a security boundary.</p>
+<p><strong>Lab Verification Steps:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Deployed dual Python 3.14.4 HTTP servers on ports <code>8000</code> and <code>8001</code> to verify strict Same-Origin Policy isolation across <code>localhost:8000</code>, <code>localhost:8001</code>, and <code>127.0.0.1:8000</code>.</li>
+<li>Inspected raw HTTP headers via Chrome DevTools Network Panel and crafted direct headless requests using <code>curl</code>.</li>
+<li>Demonstrated DOM privilege escalation by re-enabling a disabled <code>role="student"</code> form control in DevTools Console and mutating it to <code>admin</code>, proving the necessity of independent backend session &amp; role validation.</li>
+</ul>
+`,
+tags: ['Same-Origin Policy', 'AppSec', 'Python HTTP', 'cURL', 'DOM Security'],
+link: 'https://docs.google.com/document/d/1MP57bTyrZACf1zldYWw1y2GV4dGi_Ksj90MivQrJD4w/edit',
+linkText: 'Read Lab Report Doc'
+},
+'cloud-automation': {
+badge: 'DevOps & Digital Infrastructure',
+title: 'Cloud Automation & Digital Ventures Management',
+subtitle: 'GitHub Actions • Cloudflare • Local Business Presence',
+body: `
+<p><strong>Overview:</strong> Ongoing administration of automated cloud workflows, multi-domain web hosting, and local digital commerce profiles in South Tangerang.</p>
+<p><strong>Key Responsibilities:</strong></p>
+<ul class="list-disc pl-5 space-y-1.5">
+<li>Maintained automated Python/Node workflow pipelines (<code>Auto Claim Bot / nhdaily</code>) via GitHub Actions.</li>
+<li>Managed domain routing, Cloudflare DNS security, WordPress deployments, and Octavia server hosting.</li>
+<li>Administered Google Business Profiles and digital payment integrations (QRIS) for local ventures including <em>Warung Mitra Mba Eli</em> and <em>Shabya CCTV &amp; Audio Online</em>.</li>
+</ul>
+`,
+tags: ['GitHub Actions', 'Cloudflare', 'WordPress', 'Termius SSH'],
+link: 'https://www.linkedin.com/in/eralsadewa/',
+linkText: 'Connect on LinkedIn'
+},
+'cert-1': {
+badge: 'Professional Certification',
+title: 'Network System Assignment Competency Certificate',
+subtitle: 'Issued by PT Time Excelindo • Valid Jul 2025 — Jul 2029',
+body: `<p>Official industry competency certification validating Eral Shabya Dewantara’s proficiency in network installation, router &amp; switch configuration, structured troubleshooting, and preventive LAN/WAN maintenance.</p>`,
+tags: ['PT Time Excelindo', 'Network Competency', '2025–2029'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'Verify in CV'
+},
+'cert-2': {
+badge: 'Language Proficiency Credential',
+title: 'TOEIC — Score 924 / 995',
+subtitle: 'Test of English for International Communication • March 2023',
+body: `<p>Achieved a score of <strong>924 out of 995</strong> on the TOEIC exam, placing in the highest international working proficiency tier and enabling seamless comprehension of global engineering documentation, RFC standards, and cross-border collaboration.</p>`,
+tags: ['TOEIC 924/995', 'International English', 'Mar 2023'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'Verify in CV'
+},
+'cert-3': {
+badge: 'Competition Achievement',
+title: '4th Place — LKS IT Network System Administration',
+subtitle: 'Kota Tangerang Selatan • February 2024',
+body: `<p>Ranked <strong>4th out of 23 participants</strong> in the South Tangerang City Student Skills Competition (Lomba Kompetensi Siswa SMK) in IT Network System Administration (ITNSA), demonstrating practical mastery of Linux/Windows Server environments and network routing.</p>`,
+tags: ['LKS ITNSA', 'Top 4 of 23', 'South Tangerang'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'Verify in CV'
+},
+'cert-4': {
+badge: 'Community Partnership Certificate',
+title: 'Digital Security Fundamentals in the AI Era',
+subtitle: 'Generation Girl Tangerang × BimaKara • 7 August 2026',
+body: `<p>Presented by Chapter Lead Natasya Zhafira (Generation Girl Tangerang) in recognition of BimaKara’s technical partnership and support in delivering the <em>Digital Security Fundamentals in the AI Era</em> program at SMAN 3 Kabupaten Tangerang.</p>`,
+tags: ['Generation Girl', 'BimaKara', 'Cybersecurity & AI'],
+link: 'https://drive.google.com/file/d/10cd40lG1E3wfenERMUs220atZURvG1RE/view?usp=drivesdk',
+linkText: 'View Certificate PDF'
+},
+'cert-5': {
+badge: 'National Language Credential',
+title: 'UKBI — Score 550 / 800',
+subtitle: 'Uji Kemampuan Berbahasa Indonesia • Kemendikbudristek',
+body: `<p>Achieved a score of <strong>550 out of 800</strong> on the official Uji Kemampuan Berbahasa Indonesia (UKBI), supporting clear, structured academic writing and book authorship.</p>`,
+tags: ['UKBI 550/800', 'Academic Indonesian', 'Kemendikbudristek'],
+link: 'https://drive.google.com/open?id=1vMuMC6uzad7dvUQ5GJ2Pe0s5W5iMWQJG',
+linkText: 'Open Certificate Folder'
+},
+'cert-6': {
+badge: 'Industrial Internship Certificate',
+title: 'IT Support & Network Engineering Internship',
+subtitle: 'PT Rei Global Servisindo • Jun 2024 — Nov 2024',
+body: `<p>Completed a 6-month industrial placement (PKL) at PT Rei Global Servisindo (Cipondoh, Kota Tangerang), specializing in computer and Acer laptop servicing, hardware diagnostics, OS deployment, and LAN troubleshooting.</p>`,
+tags: ['PT Rei Global Servisindo', 'Hardware & Network', 'PKL 2024'],
+link: 'https://drive.google.com/open?id=1NagqnFeRXKQlkU3bl8tm6KFEa3DN0q6X',
+linkText: 'View Final PKL Report'
+},
+'exp-1': {
+badge: 'Network Simulation Blueprint',
+title: 'Cisco Packet Tracer: Normal vs. Downtime Hop Analysis',
+subtitle: 'Dual-Subnet DHCP Topology (192.168.10.x & 192.168.20.x)',
+body: `<p>Simulated enterprise routing across 2 PCs, 2 Switches (SW1 &amp; SW2), 1 Router (R1), and 1 Server (SRV1). Verified normal ICMP connectivity and simulated physical link failure between Router G0/1 and Switch 2, demonstrating how <code>tracert 192.168.20.2</code> isolates the exact gateway hop (<code>192.168.10.1</code>) where packet forwarding halts.</p>`,
+tags: ['Cisco Packet Tracer', 'ICMP & Tracert', 'DHCP Segmentation'],
+link: 'https://docs.google.com/document/d/1bvbQV7mMvw-X--vv5Nr-9wuIh8kxgtImScVjB10VmYM/edit',
+linkText: 'Open Lab Report'
+},
+'exp-2': {
+badge: 'Mobile-First UX Blueprint',
+title: 'LabLink Persona "Raka" & Digital Receipt Flow',
+subtitle: 'Synthesized from 19 Surveys & 4 Interviews at ITTS',
+body: `<p>Designed around Persona <strong>Raka</strong> (20-year-old 5th-semester ITTS student who relies on an Android phone). Maps the 5-stage user journey from equipment preparation and remote TA approval (ACC) to QR-verified equipment pickup and dispute-free return.</p>`,
+tags: ['Persona Raka', 'User Journey Map', 'Android Mobile-First'],
+link: 'https://drive.google.com/file/d/1H9ARSDHYkoYQODFnVPWQIg3vhAwWS4DT/view?usp=drivesdk',
+linkText: 'Open UX Report'
+},
+'exp-3': {
+badge: 'Virtual Router Lab',
+title: 'OpenWrt LuCI & GNS3 Multi-VM Topology',
+subtitle: 'Open-Source Router Firmware Virtualization',
+body: `<p>Combines Oracle VirtualBox hypervisor instances with GNS3 to emulate complex multi-router topologies running OpenWrt Linux firmware, complete with LuCI web administration and Termius SSH management.</p>`,
+tags: ['OpenWrt', 'GNS3', 'VirtualBox', 'LuCI'],
+link: 'https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2',
+linkText: 'Open Drive Folder'
+},
+'exp-4': {
+badge: 'Local AI Architecture',
+title: 'Ollama Local LLM Prompt & Evaluation Console',
+subtitle: 'Privacy-First Local Inference Workflow',
+body: `<p>Web-based launcher interface connected to a local Ollama runtime, enabling rapid model switching, prompt template testing, and zero-cost offline AI experimentation.</p>`,
+tags: ['Ollama', 'Local LLM', 'Web UI'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'View in CV'
+},
+'exp-5': {
+badge: 'Security Operations Blueprint',
+title: 'Wazuh SIEM Telemetry & AI Alert Triage',
+subtitle: 'Automated Log Analysis & Incident Summarization',
+body: `<p>Streams endpoint security alerts from Wazuh SIEM into a local Ollama LLM pipeline to classify threat severity and assist SOC analysts during incident response exercises.</p>`,
+tags: ['Wazuh SIEM', 'SOC', 'AI Security'],
+link: 'https://drive.google.com/open?id=1KLxHhx40MrUUOzrdAzRYJGI9Z7NY_sE2',
+linkText: 'Open Drive Folder'
+},
+'exp-6': {
+badge: 'Application Security Blueprint',
+title: 'Same-Origin Policy (SOP) & Backend Trust Boundaries',
+subtitle: 'Scheme + Host + Port Isolation Verification',
+body: `<p>Visualizes why <code>http://localhost:8000</code>, <code>http://localhost:8001</code>, and <code>http://127.0.0.1:8000</code> maintain strictly isolated browser storage spaces, while demonstrating why role authorization must always be enforced server-side.</p>`,
+tags: ['Same-Origin Policy', 'Web Security', 'Trust Boundary'],
+link: 'https://docs.google.com/document/d/1MP57bTyrZACf1zldYWw1y2GV4dGi_Ksj90MivQrJD4w/edit',
+linkText: 'Open Security Report'
+},
+'cv-modal': {
+badge: 'Curriculum Vitae • Official Summary',
+title: 'Eral Shabya Dewantara (Eralsadewa)',
+subtitle: 'Information Technology Student • Network & System Administration • South Tangerang',
+body: `
+<div class="space-y-4 text-xs md:text-sm">
+<div class="rounded-2xl border border-stroke bg-surface-elevated p-4">
+<p class="font-mono text-[11px] uppercase tracking-wider text-bronze-300">Contact &amp; Identity</p>
+<p class="mt-1"><strong>Phone / WhatsApp:</strong> +62 877-3048-5477 &nbsp;|&nbsp; <strong>Email:</strong> eralsadewa85@gmail.com</p>
+<p><strong>LinkedIn:</strong> linkedin.com/in/eralsadewa/ &nbsp;|&nbsp; <strong>Location:</strong> Serpong Utara, South Tangerang</p>
+</div>
+<div>
+<p class="font-semibold text-text-primary">Education</p>
+<p>• <strong>Institut Teknologi Tangerang Selatan (ITTS)</strong> — B.Sc. (S1) in Information Technology (2025 – Present)</p>
+<p>• <strong>SMK Negeri 6 Kota Tangerang Selatan</strong> — Computer &amp; Network Engineering / TKJ (2022 – 2025)</p>
+</div>
+<div>
+<p class="font-semibold text-text-primary">Experience &amp; Leadership</p>
+<p>• <strong>Freelance Network Technician</strong> — PT Pacific Cipta Nusantara (Jul 2025 – Present)</p>
+<p>• <strong>Chief Organizer</strong> — Cyber Security Workshop at SMKN 6 Tangsel (Jun 2026)</p>
+<p>• <strong>Chief Organizer &amp; Speaker</strong> — Bootcamp ITNSA by BimaKara (Jan 2026)</p>
+<p>• <strong>IT Internship (PKL)</strong> — PT Rei Global Servisindo (Jun 2024 – Nov 2024)</p>
+<p>• <strong>4th Place Finalist (of 23)</strong> — LKS IT Network System Administration City Level (Feb 2024)</p>
+</div>
+<div>
+<p class="font-semibold text-text-primary">Certifications &amp; Technical Skills</p>
+<p>• <strong>Network System Assignment Competency</strong> — PT Time Excelindo (Jul 2025 – Jul 2029)</p>
+<p>• <strong>TOEIC Score: 924 / 995</strong> (Mar 2023) &nbsp;|&nbsp; <strong>UKBI Score: 550 / 800</strong></p>
+<p>• <strong>Stack:</strong> TCP/IP, LAN/WAN, MikroTik (DHCP, NAT, Firewall, PCC), Cisco, Linux CLI, Windows Server, OpenWrt, GNS3, Wazuh SIEM, Ollama Local LLM, Python, Front-End Web &amp; UX Research.</p>
+</div>
+</div>
+`,
+tags: ['Downloadable CV', 'TOEIC 924/995', 'Network Engineer', 'ITTS'],
+link: 'https://drive.google.com/open?id=1krVoQLLgA3aH52IgAZBRh6seo0xSQ_PS',
+linkText: 'Open Official PDF in Drive'
+}
+};
+const modalEl = document.getElementById('detail-modal');
+const modalBadge = document.getElementById('modal-badge');
+const modalTitle = document.getElementById('modal-title');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalBody = document.getElementById('modal-body');
+const modalTags = document.getElementById('modal-tags');
+const modalLink = document.getElementById('modal-external-link');
+const modalLinkText = document.getElementById('modal-link-text');
+const closeModalBtn = document.getElementById('close-modal-btn');
+function openModal(key) {
+const item = modalDetails[key];
+if (!item || !modalEl) return;
+modalBadge.textContent = item.badge;
+modalTitle.textContent = item.title;
+modalSubtitle.textContent = item.subtitle;
+modalBody.innerHTML = item.body;
+modalTags.innerHTML = (item.tags || [])
+.map(t => `<span class="rounded-full border border-stroke bg-surface-elevated px-3 py-1 text-[10px] text-muted">${t}</span>`)
+.join('');
+if (modalLink && modalLinkText) {
+modalLink.href = item.link || '#work';
+modalLinkText.textContent = item.linkText || 'Open Document';
+}
+modalEl.classList.remove('hidden');
+modalEl.classList.add('flex');
+}
+function closeModal() {
+if (!modalEl) return;
+modalEl.classList.add('hidden');
+modalEl.classList.remove('flex');
+}
+closeModalBtn?.addEventListener('click', closeModal);
+modalEl?.addEventListener('click', (e) => {
+if (e.target === modalEl) closeModal();
+});
+window.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') closeModal();
+});
+document.querySelectorAll('.project-card').forEach(card => {
+card.addEventListener('click', () => openModal(card.getAttribute('data-proj-id')));
+card.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+openModal(card.getAttribute('data-proj-id'));
+}
+});
+});
+document.querySelectorAll('.cert-card').forEach(card => {
+card.addEventListener('click', () => openModal(card.getAttribute('data-cert-id')));
+});
+document.querySelectorAll('.exp-card').forEach(card => {
+card.addEventListener('click', () => openModal(card.getAttribute('data-exp-id')));
+});
+document.getElementById('open-cv-modal-btn')?.addEventListener('click', () => openModal('cv-modal'));
+const toastEl = document.getElementById('toast-banner');
+function showToast(msg) {
+if (!toastEl) return;
+toastEl.textContent = msg;
+toastEl.style.opacity = '1';
+toastEl.style.transform = 'translateY(0)';
+setTimeout(() => {
+toastEl.style.opacity = '0';
+toastEl.style.transform = 'translateY(3rem)';
+}, 2600);
+}
+document.getElementById('copy-email-card-btn')?.addEventListener('click', () => {
+const contactInfo = 'Eral Shabya Dewantara | Email: eralsadewa85@gmail.com | WhatsApp: +62 877-3048-5477 | LinkedIn: https://www.linkedin.com/in/eralsadewa/';
+if (navigator.clipboard && navigator.clipboard.writeText) {
+navigator.clipboard.writeText(contactInfo).catch(() => {});
+} else {
+const ta = document.createElement('textarea');
+ta.value = contactInfo;
+document.body.appendChild(ta);
+ta.select();
+try { document.execCommand('copy'); } catch (err) {}
+document.body.removeChild(ta);
+}
+const statusEl = document.getElementById('copy-card-status');
+if (statusEl) {
+statusEl.textContent = 'Copied ✓';
+setTimeout(() => { statusEl.textContent = 'Copy'; }, 2200);
+}
+showToast('Copied Eral’s email & WhatsApp to clipboard!');
+});
+const sections = ['home', 'about', 'education', 'experience', 'work', 'certificate', 'journal', 'contact'];
+const navPills = document.querySelectorAll('.nav-pill');
+window.addEventListener('scroll', () => {
+const scrollPos = window.scrollY + 240;
+let activeId = 'home';
+for (const id of sections) {
+const sec = document.getElementById(id);
+if (sec && sec.offsetTop <= scrollPos) {
+activeId = id;
+}
+}
+navPills.forEach(pill => {
+const target = pill.getAttribute('data-nav');
+if (target === activeId) {
+pill.className = 'nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm bg-surface-elevated text-text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]';
+} else {
+pill.className = 'nav-pill shrink-0 rounded-full px-3 py-1.5 text-xs transition-colors duration-300 sm:px-3.5 sm:py-2 sm:text-sm text-muted hover:bg-surface-elevated hover:text-text-primary';
+}
+});
+}, { passive: true });
+const photoInput = document.getElementById('lanyard-photo-input');
+const customPhotoImg = document.getElementById('lanyard-custom-photo');
+const vectorAvatarSvg = document.getElementById('lanyard-vector-avatar');
+if (photoInput && customPhotoImg && vectorAvatarSvg) {
+photoInput.addEventListener('change', (e) => {
+const file = e.target.files && e.target.files[0];
+if (!file) return;
+const reader = new FileReader();
+reader.onload = (ev) => {
+customPhotoImg.src = ev.target.result;
+customPhotoImg.classList.remove('hidden');
+vectorAvatarSvg.classList.add('hidden');
+showToast('Profile photo updated on your Lanyard ID card!');
+};
+reader.readAsDataURL(file);
+});
+}
+})();
+</script>
+</body>
 </html>
