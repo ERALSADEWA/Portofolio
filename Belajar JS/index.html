@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan JavaScript</title>
+</head>
+<body>
+    <input type="text" id="nama_depan" placeholder="Nama Depan"/>
+    <input type="text" id="nama_belakang" placeholder="Nama Belakang"/><br/>
+    <input type="number" id="nilai_angka" placeholder="Nilai Angka"/><br/>
+    <button onclick="submit()">Submit</button>
+    
+    <script>
+        // function submit() {
+        //     var namaDepan = document.getElementById("nama_depan").value;
+        //     var namaBelakang = document.getElementById("nama_belakang").value;
+        //     var nilaiAngka = document.getElementById("nilai_angka").value;
+        //     console.log("Nama Lengkap: " + namaDepan + " " + namaBelakang);
+        //     console.log("nilai Angka: " + nilaiAngka);
+            
+
+        //     if(nilaiAngka >= 85){
+        //         nilaiHuruf = "A";
+        //     }else if(nilaiAngka >=80){
+        //         nilaiHuruf = "A-";
+        //     }else if(nilaiAngka >= 75){
+        //         nilaiHuruf = "B+";
+        //     }else if(nilaiAngka >= 70){
+        //         nilaiHuruf = "B";
+        //     }else if(nilaiAngka >= 65){
+        //         nilaiHuruf = "B-";
+        //     }else if(nilaiAngka >= 60){
+        //         nilaiHuruf = "C+";
+        //     }else if(nilaiAngka >= 55){
+        //         nilaiHuruf = "C";
+        //     }else if(nilaiAngka >= 40){
+        //         nilaiHuruf = "D";
+        //     }else{
+        //         nilaiHuruf = "E";
+        //     }
+        //     console.log("nilai Huruf: " + nilaiHuruf);
+        // }
+
+        // console.log("1");
+        // console.log("2");
+        // console.log("3");
+
+        // for(var i=1; i<=2; i++){
+        //     console.log(i);
+        // }
+    
+    
+        // let energi = 3;
+        // while (energi > 0) {
+        //     console.log(`Karakter berjalan.. Sisa energi: ${energi}`);
+        //     energi--;
+        // }
+
+
+        // let angka = 10;
+
+        // do {
+        //     console.log("Kode ini minimal berjalan 1 kali.");
+        // } while (angka < 5);
+
+
+        // for (let i = 1; i <= 5; i++) {
+        //     if (i === 3) continue;
+        //     if (i === 5) break;
+        //     console.log(i);
+        // }
+
+        //For of
+        // const mataKuliah = ["Pemrograman Web", "Algoritma", "Basis Data"];
+
+        //    for (const mk of mataKuliah) {
+        //        console.log(`Mata Kuliah: ${mk}`);
+        //    }
+
+        //for in
+        // const mahasiswa = {
+        //        nama: "Budi Piton",
+        //        nim: "2026001",
+        //        prodi: "Teknologi Informasi"
+        //    };
+
+        //    for (const key in mahasiswa) {
+        //        console.log(`${key}: ${mahasiswa[key]}`);
+        //    }
+
+        //for each
+          const nilai = [80, 90, 75];
+
+           nilai.forEach((item, index) => {
+               console.log(`Indeks ke-${index}: Nilai ${item}`);
+           });
+
+            </script>
+</body>
+</html>
